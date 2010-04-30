@@ -1,0 +1,103 @@
+! Zenburn color scheme <http://www.brockman.se/software/zenburn/look-zenburn.xrdb>
+#include "/home/pix/Config/Xorg/Xdefaults-zenburn"
+!!!!!
+!
+!
+#define COLOR_FG                  #dcdccc
+#define COLOR_BG                  #3f3f3f
+
+#define COLOR_TERM_BLACK          COLOR_BG
+#define COLOR_TERM_DARK_RED       #705050
+
+#define COLOR_TERM_DARK_GREEN     #60b48a
+#define COLOR_TERM_DARK_YELLOW    #dfaf8f
+#define COLOR_TERM_DARK_BLUE      #506070
+#define COLOR_TERM_DARK_MAGENTA   #dc8cc3
+#define COLOR_TERM_DARK_CYAN      #8cd0d3
+#define COLOR_TERM_LIGHT_GRAY     COLOR_FG
+
+#define COLOR_TERM_DARK_GRAY      #709080
+#define COLOR_TERM_LIGHT_RED      #dca3a3
+#define COLOR_TERM_LIGHT_GREEN    #c3bf9f
+#define COLOR_TERM_LIGHT_YELLOW   #f0dfaf
+#define COLOR_TERM_LIGHT_BLUE     #94bff3
+#define COLOR_TERM_LIGHT_MAGENTA  #ec93d3
+#define COLOR_TERM_LIGHT_CYAN     #93e0e3
+#define COLOR_TERM_WHITE          #ffffff
+!!!!!!
+
+
+
+*foreground: COLOR_FG
+*background: COLOR_BG
+
+! black
+*color0:  COLOR_TERM_BLACK
+*color8:  COLOR_TERM_DARK_GRAY
+! red
+*color1:  COLOR_TERM_DARK_RED 
+*color9:  COLOR_TERM_LIGHT_RED
+! green
+*color2:  COLOR_TERM_DARK_GREEN 
+*color10: COLOR_TERM_LIGHT_GREEN
+! yellow
+*color3:  COLOR_TERM_DARK_YELLOW 
+*color11: COLOR_TERM_LIGHT_YELLOW
+! blue
+*color4:  COLOR_TERM_DARK_BLUE
+*color12: COLOR_TERM_LIGHT_BLUE
+! magenta
+*color5:  COLOR_TERM_DARK_MAGENTA
+*color13: COLOR_TERM_LIGHT_MAGENTA 
+! orange (default cyan)
+*color6:  COLOR_TERM_DARK_CYAN
+*color14: COLOR_TERM_LIGHT_CYAN
+! white
+*color7:  COLOR_TERM_DARK_GRAY
+*color15: COLOR_TERM_WHITE
+
+
+
+! urxvt settings
+! 
+urxvt.scrollBar: false
+urxvt.reverseVideo: false
+urxvt.tintColor: grey40
+urxvt.inheritPixmap: true
+!urxvt.font: -*-dina-medium-r-*-*-*-*-*-*-*-*-*-*
+!urxvt.boldFont: -*-dina-bold-r-*-*-*-*-*-*-*-*-*-*
+!urxvt.font: -*-dina-medium-r-*-*-*-*-*-*-*-*-*-*
+urxvt.saveLines: 10000
+urxvt.cursorBlink: true
+urxvt.print-pipe: cat > $(TMPDIR=$HOME mktemp urxvt.XXXXX)
+urxvt.perl-ext-common: default,selection,matcher,searchable-scrollback<M-s>/
+urxvt*matcher.button: 1                   /* match left-mouse-button */
+urxvt*urlLauncher: firefox                /* launch firefox on matched text */
+!urxvt.termName:  rxvt-256color
+
+! Vim
+Vim*useSchemes:	all
+Vim*sgiMode:	true
+Vim.foreground:	lightyellow2
+Vim*background:	Black
+Vim.useEnhancedFSB:	true
+Vim.geometry:	88x40
+
+yeahconsole*toggleKey: None+twosuperior
+yeahconsole*loginShell:True
+yeahconsole*consoleHeight: 60
+yeahconsole*screenWidth: 1440
+yeahconsole*tintColor: grey40
+yeahconsole*aniDelay:0 
+yeahconsole*stepSize:100
+yeahconsole*handleWidth:10
+yeahconsole*term:urxvt
+yeahconsole*termName:rxvt-256color
+yeahconsole*scrollBar: false
+yeahconsole*reverseVideo: false
+!yeahconsole*tintColor: grey40
+yeahconsole*inheritPixmap: true
+yeahconsole*saveLines: 10000
+yeahconsole*cursorBlink: true
+
+*sessionMgt:false
