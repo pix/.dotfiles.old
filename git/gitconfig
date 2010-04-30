@@ -1,3 +1,6 @@
 [user]
 	name = Camille Moncelier
 	email = moncelier@devlife.org
+[alias]
+	st = status
+	co = checkout
