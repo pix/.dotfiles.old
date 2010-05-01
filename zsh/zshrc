@@ -1,0 +1,47 @@
+# Load System wide profile:
+. /etc/profile
+autoload -U compinit promptinit
+compinit
+promptinit; prompt walters
+
+
+# exports
+export LANG=en_US.utf8
+export LC_COLLATE=C
+
+# This set of functions implements a sort of magic history searching.
+# After predict-on, typing characters causes the editor to look backward
+# in the history for the first line beginning with what you have typed so
+# far.  After predict-off, editing returns to normal for the line found.
+# In fact, you often don't even need to use predict-off, because if the
+# line doesn't match something in the history, adding a key performs
+# standard completion - though editing in the middle is liable to delete
+# the rest of the line.
+autoload -U predict-on
+zle -N predict-on
+zle -N predict-off
+bindkey "^X^Z" predict-on ## C-x C-z
+bindkey "^Z" predict-off ## C-z
+bindkey ' ' magic-space  # also do history expanse on space
+
+# Only ask for seeing all possibilities if line would scroll off screen
+LISTMAX=0
+
+setopt emacs
+setopt auto_cd
+setopt autopushd
+setopt correct
+setopt extended_glob
+setopt interactive_comments
+setopt list_packed	        # Okay to set different column-widths when completing
+setopt no_bg_nice
+setopt no_hup
+setopt print_eight_bit          # Print 8-bit in completions
+
+
+for i in ~/.zsh.d/*.sh ; do
+	source "$i"
+done
+
+export PATH=$PATH:~/Data/path/bin
+

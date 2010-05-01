@@ -1,0 +1,30 @@
+# completion menu ############################################################
+#
+zstyle ':completion:*' menu select=1
+
+# Completion options #########################################################
+#
+zstyle ':completion:*' completer _complete _prefix
+zstyle ':completion::prefix-1:*' completer _complete
+zstyle ':completion:incremental:*' completer _complete _correct
+zstyle ':completion:predict:*' completer _complete
+zstyle ':completion:::::' completer _complete _approximate
+zstyle -e ':completion:*:approximate:::' max-errors \
+'reply=( $(( ($#PREFIX+$#SUFFIX)/4 )) numeric )'
+zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion::complete:*' cache-path ~/.zsh/cache/$HOST
+zstyle ':completion:*:rm:*' ignore-line yes
+zstyle ':completion:*:cp:*' ignore-line yes
+# Separate matches into groups
+zstyle ':completion:*:matches' group 'yes'
+# Describe each match group.
+zstyle ':completion:*:descriptions' format "%B---- %d%b"
+# Messages/warnings format
+zstyle ':completion:*:messages' format '%B%U---- %d%u%b'
+zstyle ':completion:*:warnings' format '%B%U---- no match for: %d%u%b'
+
+# tag-order 'globbed-files directories' all-files 
+zstyle ':completion::complete:*:tar:directories' file-patterns '*~.*(-/)'
+# Don't complete backup files as executables
+zstyle ':completion:*:complete:-command-::commands' ignored-patterns '*\~'
+

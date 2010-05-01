@@ -1,0 +1,25 @@
+# extract an archive according to file type ##################################
+#
+extract () {
+	if [ -f $1 ]; then
+		case $1 in
+			*.tar.bz2)  tar -jxvf $1     ;;
+			*.tar.gz)   tar -zxvf $1     ;;
+			*.bz2)      bunzip2 $1       ;;
+			*.rar)      unrar x $1       ;;
+			*.gz)       gunzip $1        ;;
+			*.tar)      tar -xvf $1      ;;
+			*.tbz2)     tar -jxvf $1     ;;
+			*.tgz)      tar -zxvf $1     ;;
+			*.zip)      unzip $1         ;;
+			*.rpm)      rpm2cpio $1 | cpio -mid ;;
+			*.Z)        uncompress $1    ;;
+			*)
+			echo "'$1' unknown archive type"
+			;;
+		esac
+	else
+		echo "'$1' is not a valid file"
+	fi
+}
+

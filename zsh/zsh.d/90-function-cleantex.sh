@@ -1,0 +1,23 @@
+#
+# "Safely" remove latex "junk" files
+#
+cleantex(){
+	if [ "$1" \!= "nodry" ] ; then
+		DRY=echo
+	else
+		DRY=""
+	fi
+
+	oldIFS=$IFS
+	IFS=$'\n'
+	files=($(find ./ -iname '*.tex' -print | sed 's/\.tex//g'))
+	for i in ${files[@]} ; do
+		$DRY rm -f $i.{log,pdf,aux,dvi,lof,toc,out,bbl,blg,glo,ilg,gls,ps}
+	done
+	IFS=$oldIFS
+
+	if [ "$DRY" = "echo" ] ; then
+		echo
+		echo "Type: $0 nodry do disable dry mode"
+	fi
+}

@@ -1,0 +1,15 @@
+preexec () {
+
+  print -nP '\033]0;'
+  print -nP "$coreprompt: "
+  # Truncate at 60 chars, escape %, escape invisibles
+  print -nPR "%60>...>${(V)1//\%/%%}"
+  print -n '\007'
+  # Also set the screen window title to programs I run.
+  if [ "$TERM" = screen ]; then
+    print -nP '\033k%'
+    print -nPR "%60>...>${(V)1//\%/%%}"
+    print -n '\033\\'
+  fi
+}
+

@@ -1,8 +1,3 @@
-! Zenburn color scheme <http://www.brockman.se/software/zenburn/look-zenburn.xrdb>
-#include "/home/pix/Config/Xorg/Xdefaults-zenburn"
-!!!!!
-!
-!
 #define COLOR_FG                  #dcdccc
 #define COLOR_BG                  #3f3f3f
 
@@ -24,9 +19,6 @@
 #define COLOR_TERM_LIGHT_MAGENTA  #ec93d3
 #define COLOR_TERM_LIGHT_CYAN     #93e0e3
 #define COLOR_TERM_WHITE          #ffffff
-!!!!!!
-
-
 
 *foreground: COLOR_FG
 *background: COLOR_BG
