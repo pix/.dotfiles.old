@@ -1,0 +1,140 @@
+"colorscheme zenburn 
+set t_Co=256 
+
+" File-type highlighting and configuration.
+" Run :filetype (without args) to see what you may have
+" to turn on yourself, or just set them all to be sure.
+au BufRead,BufNewFile *.tex setf tex
+syntax on
+filetype on
+filetype plugin on
+filetype indent on
+
+
+set nofoldenable 
+ 
+
+function! Sudowq()
+	exe "w !sudo tee % > /dev/null"
+	exe "e!"
+endfunction
+
+nmap <F2> :call Sudowq()<CR><Enter>
+
+" The current buffer can be put to the background without writing to disk;
+" When a background buffer becomes current again, marks and undo-history are remembered.
+set hidden
+
+" By default, Vim only remembers the last 20 commands and search patterns
+" entered. It’s nice to boost this up: 
+set history=1000
+
+" The % key will switch between opening and closing brackets. By sourcing
+" matchit.vim, it can also switch among e.g. if/elsif/else/end, between
+" opening and closing XML tags, and more. 
+runtime macros/matchit.vim
+
+" By default, pressing <TAB> in command mode will choose the first possible
+" completion with no indication of how many others there might be. The
+" following configuration lets you see what your other options are: 
+set wildmenu
+
+" To have the completion behave similarly to a shell, i.e. complete only up to
+" the point of ambiguity (while still showing you what your options are), also
+" add the following:
+set wildmode=list:longest
+
+" These two options, when set together, will make /-style searches
+" case-sensitive only if there is a capital letter in the search expression.
+" *-style searches continue to be consistently case-sensitive. 
+set ignorecase 
+set smartcase
+
+" A running gvim will always have a window title, but when vim is run within
+" an xterm, by default it inherits the terminal’s current title. 
+set title
+
+" When the cursor is moved outside the viewport of the current window, the
+" buffer is scrolled by a single line. Setting the option below will start the
+" scrolling three lines before the border, keeping more context around where
+" you’re working. 
+set scrolloff=3
+
+" Swap files and backups are annoying but can save you a lot of trouble.
+" Rather than spreading them all around your filesystem, isolate them to a
+" single directory: 
+set backupdir=~/.vim/tmp/,~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim/tmp,~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
+" Intuitive backspacing in insert mode
+set backspace=indent,eol,start
+ 
+
+" Highlight search terms...
+set hlsearch
+set incsearch " ...dynamically as they are typed.
+
+" The following will make tabs and trailing spaces visible when requested: 
+" By default whitespace will be hidden, but now it can be toggled with ,s.
+set listchars=tab:>-,trail:·,eol:$
+nmap <silent> <leader>s :set nolist!<CR>
+
+" The “Press ENTER or type command to continue” prompt is jarring and usually
+" unnecessary. You can shorten command-line text and other info tokens with,
+set shortmess=atI
+
+
+" Who needs .gvimrc?
+if has('gui_running')
+  set encoding=utf-8
+  "set guifont=Monospace\ Bold\ 9
+  set guifont=Bitstream\ Vera\ Sans\ Mono\ 8
+  " Turn off toolbar and menu
+  set background=dark
+  colorscheme zenburn
+  colorscheme zenburn
+else
+  colorscheme zenburn
+
+end
+
+
+
+"" php
+let php_htmlInStrings = 1 " use html syntax in strings
+
+"" shell scripting
+let highlight_function_name = 1
+
+" binds
+"map <C-n> za
+map  <C-s> :w!<CR>
+imap <C-s> <Esc>:w!<CR>a
+map  <C-t> :tabnew<CR>
+imap <C-t> <Esc>:tabnew<CR>a
+
+
+
+noremap <silent> <F11> :MiniBufExplorer <CR>
+"save current file
+map <F3> :q!<CR> 
+map <F4> :w!<CR>
+map <F9> :bprevious <CR>
+map <F10> :bnext <CR>
+
+set nocompatible
+filetype on
+filetype plugin on
+filetype indent on
+
+
+" spaces spaces spaces
+set tabstop=2
+set shiftwidth=2
+set autoindent
+set expandtab
+autocmd FileType make     set noexpandtab
+autocmd FileType python   set noexpandtab
+
+set mouse-=a
+colorscheme desert
