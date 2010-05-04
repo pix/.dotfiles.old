@@ -16,3 +16,8 @@ if [[ ! -d ~/.vim ]] && [[  ! -f ~/.vimrc ]]; then
     ln -s ~/Config/vim/vimrc ~/.vimrc
     ln -s ~/Config/vim/vim ~/.vim
 fi
+
+if [[ ! -f ~/.tmux.conf ]]; then
+    echo "[tmux] Linking tmux config: ~/.tmux.conf"
+    ln -s ~/Config/tmux/tmux.conf ~/.tmux.conf
+fi
