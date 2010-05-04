@@ -1,5 +1,5 @@
 export HISTSIZE=100000
-export HISTFILE=~/.zsh_history
+export HISTFILE=~/.history/zsh
 export SAVEHIST=100000
 
 

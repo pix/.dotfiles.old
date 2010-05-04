@@ -26,3 +26,8 @@ if [[ ! -f ~/.dir_colors ]]; then
     echo "[ls] Installing dir_colors"
     ln -s ~/Config/misc/dir_colors ~/.dir_colors
 fi
+
+if [[ ! -f ~/.gdbinit ]]; then
+    echo "[gdb] Installing config ~/.gdbinit"
+    ln -s ~/Config/misc/gdbinit ~/.gdbinit
+fi
