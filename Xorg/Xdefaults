@@ -1,54 +1,30 @@
-#define COLOR_FG                  #dcdccc
-#define COLOR_BG                  #3f3f3f
-
-#define COLOR_TERM_BLACK          COLOR_BG
-#define COLOR_TERM_DARK_RED       #705050
-
-#define COLOR_TERM_DARK_GREEN     #60b48a
-#define COLOR_TERM_DARK_YELLOW    #dfaf8f
-#define COLOR_TERM_DARK_BLUE      #506070
-#define COLOR_TERM_DARK_MAGENTA   #dc8cc3
-#define COLOR_TERM_DARK_CYAN      #8cd0d3
-#define COLOR_TERM_LIGHT_GRAY     COLOR_FG
-
-#define COLOR_TERM_DARK_GRAY      #709080
-#define COLOR_TERM_LIGHT_RED      #dca3a3
-#define COLOR_TERM_LIGHT_GREEN    #c3bf9f
-#define COLOR_TERM_LIGHT_YELLOW   #f0dfaf
-#define COLOR_TERM_LIGHT_BLUE     #94bff3
-#define COLOR_TERM_LIGHT_MAGENTA  #ec93d3
-#define COLOR_TERM_LIGHT_CYAN     #93e0e3
-#define COLOR_TERM_WHITE          #ffffff
-
-*foreground: COLOR_FG
-*background: COLOR_BG
-
-! black
-*color0:  COLOR_TERM_BLACK
-*color8:  COLOR_TERM_DARK_GRAY
-! red
-*color1:  COLOR_TERM_DARK_RED 
-*color9:  COLOR_TERM_LIGHT_RED
-! green
-*color2:  COLOR_TERM_DARK_GREEN 
-*color10: COLOR_TERM_LIGHT_GREEN
-! yellow
-*color3:  COLOR_TERM_DARK_YELLOW 
-*color11: COLOR_TERM_LIGHT_YELLOW
-! blue
-*color4:  COLOR_TERM_DARK_BLUE
-*color12: COLOR_TERM_LIGHT_BLUE
-! magenta
-*color5:  COLOR_TERM_DARK_MAGENTA
-*color13: COLOR_TERM_LIGHT_MAGENTA 
-! orange (default cyan)
-*color6:  COLOR_TERM_DARK_CYAN
-*color14: COLOR_TERM_LIGHT_CYAN
-! white
-*color7:  COLOR_TERM_DARK_GRAY
-*color15: COLOR_TERM_WHITE
-
-
+! Daisuke
+URxvt*background: #000000
+URxvt*foreground: #dcdccc
+!black
+URxvt*color0: #1e1e1e
+URxvt*color8: #505050
+!red
+URxvt*color1: #b04020
+URxvt*color9: #dd4010
+!green
+URxvt*color2: #afd700
+URxvt*color10: #daff30
+!yellow
+URxvt*color3: #f7cf0a
+URxvt*color11: #fce70d
+!blue
+URxvt*color4: #3060aa
+URxvt*color12: #6099dd
+!magenta
+URxvt*color5: #d6156c
+URxvt*color13: #fe4365
+!cyan
+URxvt*color6: #a0c2de
+URxvt*color14: #c9dee8
+!white
+URxvt*color7: #808080
+URxvt*color15: #b0b0b0
 
 ! urxvt settings
 ! 
@@ -56,16 +32,12 @@ urxvt.scrollBar: false
 urxvt.reverseVideo: false
 urxvt.tintColor: grey40
 urxvt.inheritPixmap: true
-!urxvt.font: -*-dina-medium-r-*-*-*-*-*-*-*-*-*-*
-!urxvt.boldFont: -*-dina-bold-r-*-*-*-*-*-*-*-*-*-*
-!urxvt.font: -*-dina-medium-r-*-*-*-*-*-*-*-*-*-*
 urxvt.saveLines: 10000
 urxvt.cursorBlink: true
 urxvt.print-pipe: cat > $(TMPDIR=$HOME mktemp urxvt.XXXXX)
 urxvt.perl-ext-common: default,selection,matcher,searchable-scrollback<M-s>/
 urxvt*matcher.button: 1                   /* match left-mouse-button */
 urxvt*urlLauncher: firefox                /* launch firefox on matched text */
-!urxvt.termName:  rxvt-256color
 
 ! Vim
 Vim*useSchemes:	all
@@ -87,7 +59,6 @@ yeahconsole*term:urxvt
 yeahconsole*termName:rxvt-256color
 yeahconsole*scrollBar: false
 yeahconsole*reverseVideo: false
-!yeahconsole*tintColor: grey40
 yeahconsole*inheritPixmap: true
 yeahconsole*saveLines: 10000
 yeahconsole*cursorBlink: true
