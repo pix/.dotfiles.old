@@ -21,3 +21,8 @@ if [[ ! -f ~/.tmux.conf ]]; then
     echo "[tmux] Linking tmux config: ~/.tmux.conf"
     ln -s ~/Config/tmux/tmux.conf ~/.tmux.conf
 fi
+
+if [[ ! -f ~/.dir_colors ]]; then
+    echo "[ls] Installing dir_colors"
+    ln -s ~/Config/coreutils/dir_colors ~/.dir_colors
+fi

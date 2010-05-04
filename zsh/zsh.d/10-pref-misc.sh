@@ -1,6 +1,8 @@
 export HISTSIZE=100000
 export HISTFILE=~/.zsh_history
 export SAVEHIST=100000
+
+
 setopt  \
 	inc_append_history \
   hist_ignore_all_dups \
@@ -16,3 +18,10 @@ fc -R
 
 # wait 10 seconds before querying for a rm which contains a *
 setopt rmstarwait
+
+# GNU Colors
+[ -f ~/.dir_colors ] && eval $(dircolors -b ~/.dir_colors)
+export ZLSCOLORS="${LS_COLORS}"
+zmodload  zsh/complist
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31' 
