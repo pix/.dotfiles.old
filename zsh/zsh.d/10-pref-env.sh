@@ -1,4 +1,5 @@
 #!/bin/sh
-export MPD_HOST=192.168.2.2
-
-export EDITOR=vim
+which vim >/dev/null 2>/dev/null
+if [ $? -eq 0 ]; then 
+  export EDITOR=vim
+fi
