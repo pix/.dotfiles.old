@@ -1,6 +1,40 @@
+[color]
+	ui = auto 
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = blue bold
+	frag = cyan 
+	old = magenta 
+	new = green 
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
 [user]
 	name = Camille Moncelier
 	email = moncelier@devlife.org
+
 [alias]
 	st = status
 	co = checkout
+    ci = commit
+    br = branch
+    df = diff
+    lg = log -p
+
+[apply]
+    whitespace = fix
+
+[sendemail]
+   smtpserver = smtp.gmail.com
+   smtpserverport = 587
+   smtpencryption = tls
+   smtpuser = pixdamix@gmail.com
+
