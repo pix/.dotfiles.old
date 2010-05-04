@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [[ ! -f ~/.gitconfig ]]; then
+    echo "[git] Linking git config: ~/.gitconfig"
+    ln -s ~/Config/git/gitconfig ~/.gitconfig
+fi
+
+if [[ ! -d ~/.zsh.d ]] && [[  ! -f ~/.zshrc ]]; then
+    echo "[zsh] Linking zsh config"
+    ln -s ~/Config/zsh/zshrc ~/.zshrc
+    ln -s ~/Config/zsh/zsh.d ~/.zsh.d
+fi
+
+if [[ ! -d ~/.vim ]] && [[  ! -f ~/.vimrc ]]; then
+    echo "[vim] Linking vim config"
+    ln -s ~/Config/vim/vimrc ~/.vimrc
+    ln -s ~/Config/vim/vim ~/.vim
+fi
