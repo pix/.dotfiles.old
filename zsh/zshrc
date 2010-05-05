@@ -43,5 +43,5 @@ for i in ~/.zsh.d/*.sh ; do
 	source "$i"
 done
 
-export PATH=$PATH:~/Data/path/bin
+export PATH=$PATH:~/.bin
 
