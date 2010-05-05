@@ -1,7 +1,9 @@
 preexec () {
 
   print -nP '\033]0;'
-  print -nP "$coreprompt: "
+  if [[ -n "$SSH_CLIENT" ]]; then
+    print -nP "$USER@$HOST : " 
+  fi
   # Truncate at 60 chars, escape %, escape invisibles
   print -nPR "%60>...>${(V)1//\%/%%}"
   print -n '\007'
