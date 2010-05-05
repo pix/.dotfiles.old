@@ -1,7 +1,0 @@
-# Quick rename ###############################################################
-#
-sanitize-perms() {
-	sudo chmod -Rv a-rwX,u+rwX ./
-	sudo chown -Rv ${USER}":users" ./ 
-}
-
