@@ -4,7 +4,7 @@ export SAVEHIST=100000
 
 
 setopt  \
-	inc_append_history \
+  inc_append_history \
   hist_ignore_all_dups \
   hist_reduce_blanks \
   hist_verify \

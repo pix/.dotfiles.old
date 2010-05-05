@@ -21,5 +21,3 @@ alias vi='vim'
 alias clean='rm -f *~ *# *.aux *.blg *.log'
 
 alias quickweb='python -m SimpleHTTPServer'
-
-alias mplayergl='mplayer -xineramascreen 2 -fs -vo gl'

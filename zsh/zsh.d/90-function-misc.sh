@@ -1,14 +1,18 @@
+# Most used commands
 cmdtop(){
 	fc -ln 0 | sed 's/^sudo//g' | awk '{a[$1]++ } END{for(i in a){print a[i] " " i}}'|sort -nr|head -n 20
 }
+# Most used commands (percentages)
 cmdtopp(){
 	fc -ln 0 | sed 's/^sudo//g' | awk '{a[$1]++ b++}END{for(i in a){printf "%02.1f%% : %s\n",a[i]/b*100,i}}'|sort -rn|head -n 20
 }
+
+# Biggest files in the current directory
 dirtop(){
 	du -sk ./*  | sort -n | awk 'BEGIN{ pref[1]="K"; pref[2]="M"; pref[3]="G";} { total = total + $1; x = $1; y = 1; while( x > 1024 ) { x = (x + 1023)/1024; y++; } printf("%g%s\t%s\n",int(x*10)/10,pref[y],$2); } END { y = 1; while( total > 1024 ) { total = (total + 1023)/1024; y++; } printf("Total: %g%s\n",int(total*10)/10,pref[y]); }'
 }
 
+# Create then jump
 mkcd(){
-  mkdir $1
-  cd $1
+  mkdir $1 && cd $1
 }
