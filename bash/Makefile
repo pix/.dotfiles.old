@@ -1,9 +1,6 @@
 CONFIGS = \
-					Xdefaults \
-					dir_colors \
-					tmux.conf \
-					gdbinit \
-					gitconfig 
+					bashrc \
+					bash.d
 
 
 default : all

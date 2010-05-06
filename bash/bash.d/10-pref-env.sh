@@ -1,0 +1,1 @@
+../../zsh/zsh.d/10-pref-env.sh
