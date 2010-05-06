@@ -1,0 +1,21 @@
+# #!/bin/zsh
+
+snippet comp
+	do_compile() {
+		${1}
+	}
+
+snippet inst
+	do_install() {
+		${1}
+	}
+
+snippet req
+	require ${1}.inc
+
+snippet src
+	SRC_URI += " \
+		${1} \
+	"
+snippet fi
+	file://${1}

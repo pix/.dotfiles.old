@@ -4,6 +4,7 @@ CONFIGS = \
 					tmux.conf \
 					gdbinit \
 					gitconfig \
+					bashrc 
 
 
 default : all
