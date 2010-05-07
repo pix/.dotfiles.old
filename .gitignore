@@ -8,6 +8,10 @@
 
 vim/vim/tmp
 
+# gitconfig machinery
+Makefile.local
+misc/gitconfig
+
 # Github token
 zsh/zsh.d/10-pref-github.sh
 bash/bash.d/10-pref-github.sh

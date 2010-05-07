@@ -18,8 +18,8 @@
 	untracked = cyan
 
 [user]
-	name = Camille Moncelier
-	email = moncelier@devlife.org
+	name = USER_NAME
+	email = USER_MAIL
 
 [alias]
 	st = status
