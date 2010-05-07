@@ -12,7 +12,7 @@ zstyle ':completion:::::' completer _complete _approximate
 zstyle -e ':completion:*:approximate:::' max-errors \
 'reply=( $(( ($#PREFIX+$#SUFFIX)/4 )) numeric )'
 zstyle ':completion::complete:*' use-cache 1
-zstyle ':completion::complete:*' cache-path ~/.zsh/cache/$HOST
+zstyle ':completion::complete:*' cache-path ~/.zsh.d/cache/$HOST
 zstyle ':completion:*:rm:*' ignore-line yes
 zstyle ':completion:*:cp:*' ignore-line yes
 # Separate matches into groups
