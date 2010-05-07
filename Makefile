@@ -1,6 +1,7 @@
 CONFIGS = \
 					misc \
 					zsh \
+					bash \
 					vim \
 					bin
 
