@@ -3,12 +3,13 @@ CONFIGS = \
 					zsh \
 					bash \
 					vim \
-					bin
+					bin \
+					vendors
 
 
 default : all
 
-all : $(CONFIGS)
+all : $(CONFIGS) git-setup
 
 install-dir-bin : bin
 	ln -sfT $(CURDIR)/bin $(HOME)/.bin
@@ -16,5 +17,10 @@ install-dir-bin : bin
 install-dir-% : %
 	make -C $* install
 
-install: $(foreach f, $(CONFIGS), install-dir-$(f) )
+git-setup:
+	@echo '[git] submodule init'
+	@git submodule init 
+	@git submodule update
+
+install: git-setup $(foreach f, $(CONFIGS), install-dir-$(f) )
 

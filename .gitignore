@@ -8,6 +8,9 @@
 
 vim/vim/tmp
 
+# bin/sshuttle is created by make install
+bin/sshuttle
+
 # gitconfig machinery
 Makefile.local
 misc/gitconfig

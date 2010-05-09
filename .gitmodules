@@ -1,0 +1,3 @@
+[submodule "vendors/sshuttle"]
+	path = vendors/sshuttle
+	url = http://github.com/apenwarr/sshuttle.git
