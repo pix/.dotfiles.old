@@ -10,6 +10,10 @@ export HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 shopt -s histappend
 
+# I like all my history files in ~/.history
+if [[ ! -d ~/.history ]]; then
+    mkdir ~/.history
+fi
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 export HISTSIZE=100000
 export HISTFILESIZE=100000

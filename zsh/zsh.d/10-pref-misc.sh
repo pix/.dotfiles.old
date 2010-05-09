@@ -1,7 +1,11 @@
+# I like all my history files in ~/.history
+if [[ ! -d ~/.history ]]; then
+    mkdir ~/.history
+fi
+# Keep almost everything 
 export HISTSIZE=100000
 export HISTFILE=~/.history/zsh
 export SAVEHIST=100000
-
 
 setopt  \
   inc_append_history \
