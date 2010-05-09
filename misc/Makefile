@@ -14,7 +14,8 @@ CONFIGS = \
 					dir_colors \
 					tmux.conf \
 					gdbinit \
-					gitconfig 
+					gitconfig \
+					sqliterc
 
 
 default : all
