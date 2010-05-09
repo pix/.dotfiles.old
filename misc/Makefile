@@ -1,5 +1,9 @@
-USER_NAME = Camille Moncelier
-USER_MAIL = moncelier@devlife.org
+USER_NAME       = Camille Moncelier
+USER_MAIL       = moncelier@devlife.org
+SMTP_USERNAME   = pixdamix@gmail.com
+SMTP_SERVER     = smtp.gmail.com
+SMTP_PORT       = 587
+SMTP_ENCRYPTION = tls
 
 ifneq "$(wildcard ../Makefile.local)" ""
 include ../Makefile.local
@@ -20,10 +24,15 @@ all : $(CONFIGS)
 clean :
 	rm *~ ftp-install-script || true
 
-gitconfig : gitconfig.local
-	sed -e "s/USER_NAME/$(USER_NAME)/g" \
-			-e "s/USER_MAIL/$(USER_MAIL)/g" \
-			< gitconfig.local > gitconfig
+gitconfig : gitconfig.local Makefile
+	sed \
+	-e "s/SMTP_ENCRYPTION/$(SMTP_ENCRYPTION)/g" \
+	-e "s/SMTP_USERNAME/$(SMTP_USERNAME)/g" \
+	-e "s/SMTP_SERVER/$(SMTP_SERVER)/g" \
+	-e "s/SMTP_PORT/$(SMTP_PORT)/g" \
+	-e "s/USER_NAME/$(USER_NAME)/g" \
+	-e "s/USER_MAIL/$(USER_MAIL)/g" \
+	< gitconfig.local > gitconfig
 
 install-file-% : %
 	ln -sfT $(CURDIR)/$* $(HOME)/.$*

@@ -24,18 +24,18 @@
 [alias]
 	st = status
 	co = checkout
-  ci = commit
-  br = branch
-  df = diff
-  lg = log -p
-  tar-gz = !sh -c 'prefix=$(basename $PWD) && ver=$1 && git archive --prefix=\"$prefix-$ver/\" HEAD | gzip > \"$prefix-$ver.tar.gz\"' -
+	ci = commit
+	br = branch
+	df = diff
+	lg = log -p
+	tar-gz = !sh -c 'prefix=$(basename $PWD) && ver=$1 && git archive --prefix=\"$prefix-$ver/\" HEAD | gzip > \"$prefix-$ver.tar.gz\"' -
 
 [apply]
-    whitespace = fix
+	whitespace = fix
 
 [sendemail]
-   smtpserver = smtp.gmail.com
-   smtpserverport = 587
-   smtpencryption = tls
-   smtpuser = pixdamix@gmail.com
+	 smtpserver = SMTP_SERVER
+	 smtpserverport = SMTP_PORT
+	 smtpencryption = SMTP_ENCRYPTION
+	 smtpuser = SMTP_USERNAME
 
