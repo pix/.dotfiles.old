@@ -22,6 +22,7 @@
 	email = USER_MAIL
 
 [alias]
+	l = log --graph --decorate --oneline
 	st = status
 	co = checkout
 	ci = commit
