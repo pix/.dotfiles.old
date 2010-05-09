@@ -3,3 +3,8 @@ which vim >/dev/null 2>/dev/null
 if [ $? -eq 0 ]; then 
   export EDITOR=vim
 fi
+
+RUBY_1_8_GEMS=~/.gem/ruby/1.8/bin
+if [[ -d ${RUBY_1_8_GEMS} ]]; then
+    export PATH="${PATH}:${RUBY_1_8_GEMS}"
+fi
