@@ -68,11 +68,6 @@ set backspace=indent,eol,start
 set hlsearch
 set incsearch " ...dynamically as they are typed.
 
-" The following will make tabs and trailing spaces visible when requested: 
-" By default whitespace will be hidden, but now it can be toggled with ,s.
-set listchars=tab:>-,trail:·,eol:$
-nmap <silent> <leader>s :set nolist!<CR>
-
 " The “Press ENTER or type command to continue” prompt is jarring and usually
 " unnecessary. You can shorten command-line text and other info tokens with,
 set shortmess=atI
