@@ -1,1 +1,1 @@
-../../zsh/zsh.d/90-function-ariadne.sh
+../../zsh/zsh/rc/90-function-ariadne.rc

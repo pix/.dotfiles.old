@@ -22,4 +22,6 @@ bindkey "^[Od"    backward-word         # aterm
 bindkey "^[Oc"    forward-word          # aterm
 bindkey "^[^[[3~" delete-word           # aterm
 
-#bindkey "^T" push-line
+bindkey "^X^Z" predict-on ## C-x C-z
+bindkey "^Z" predict-off ## C-z
+bindkey ' ' magic-space  # also do history expanse on space

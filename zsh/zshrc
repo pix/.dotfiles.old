@@ -1,47 +1,66 @@
-# Load System wide profile:
-. /etc/profile
-autoload -U compinit promptinit
-compinit
-promptinit; prompt walters
+# 
+# Zshrc home configs files
+# Camille Moncelier <pix@devlife.org>
+#
+# Greatly inspired by  Bruno Bonfils, <asyd@asyd.net>
+#
+#
+
+# My functions (don't forget to modify fpath before call compinit !!)
+fpath=($HOME/.zsh/functions $fpath)
 
 
-# exports
-export LANG=en_US.utf8
-export LC_COLLATE=C
+# in order to have many completion function run comptinstall !
+autoload -U zutil
+autoload -U compinit
+autoload -U complist
 
-# This set of functions implements a sort of magic history searching.
-# After predict-on, typing characters causes the editor to look backward
-# in the history for the first line beginning with what you have typed so
-# far.  After predict-off, editing returns to normal for the line found.
-# In fact, you often don't even need to use predict-off, because if the
-# line doesn't match something in the history, adding a key performs
-# standard completion - though editing in the middle is liable to delete
-# the rest of the line.
 autoload -U predict-on
 zle -N predict-on
 zle -N predict-off
-bindkey "^X^Z" predict-on ## C-x C-z
-bindkey "^Z" predict-off ## C-z
-bindkey ' ' magic-space  # also do history expanse on space
+
+
+# Activation
+compinit
+
+local os host
+
+# Set default umask to 027, can be override by host specific resource file
+umask 022
+
+# Load System wide profile:
+[ -f /etc/profile ] && source /etc/profile
+
+# per OS resource file
+os=$(uname)
+[ -f "$HOME/.zsh/rc.os/${os}.zsh" ] && source "$HOME/.zsh/rc.os/${os}.zsh"
+
+# Global resource files
+for file in $HOME/.zsh/rc/*.rc; do
+    source $file
+done
+
+# per host resource file
+host=${$(hostname)//.*/}
+if [ -f "$HOME/.zsh/rc.host/${host}.zsh" ] ; then
+     source "$HOME/.zsh/rc.host/${host}.zsh"
+else
+    source "$HOME/.zsh/rc.host/default.zsh"
+fi
+
+# Local file
+[[ -f ~/.zsh/rc.local ]] && source ~/.zsh/rc.local
+
+# exports default languages
+export LANG=en_US.utf8
+export LC_COLLATE=C
 
 # Only ask for seeing all possibilities if line would scroll off screen
 LISTMAX=0
 
-setopt emacs
-setopt auto_cd
-setopt autopushd
-setopt correct
-setopt extended_glob
-setopt interactive_comments
-setopt list_packed	        # Okay to set different column-widths when completing
-setopt no_bg_nice
-setopt no_hup
-setopt print_eight_bit          # Print 8-bit in completions
-
-
-for i in ~/.zsh.d/*.sh ; do
-	source "$i"
-done
+# setup prompt
+autoload -U promptinit
+promptinit
+prompt walters
 
 export PATH=$PATH:~/.bin
-

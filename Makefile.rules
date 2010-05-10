@@ -4,9 +4,12 @@ default : all
 
 all : $(CONFIGS)
 
+clean-old-%:
+	@sh -c "if [ -h "~/.$*" ]; then rm ~/.$* ; echo '  [clean] old link ~/.$*'; fi"
+
 install-file-% : %
 	@echo "  [ln]    Linking $* to ~/.$*"
 	@ln -sfT $(CURDIR)/$* $(HOME)/.$*
 
-install: $(foreach f, $(CONFIGS), install-file-$(f) )
+install: $(foreach f, $(CONFIGS), install-file-$(f) ) $(foreach g, $(OLD_CONFIGS), clean-old-$(g) )
 

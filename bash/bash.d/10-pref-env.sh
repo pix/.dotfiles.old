@@ -1,1 +1,1 @@
-../../zsh/zsh.d/10-pref-env.sh
+../../zsh/zsh/rc/10-pref-env.rc

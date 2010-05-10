@@ -16,6 +16,6 @@ Makefile.local
 misc/gitconfig
 
 # Github token
-zsh/zsh.d/10-pref-github.sh
+zsh/zsh/rc/10-pref-github.rc
 bash/bash.d/10-pref-github.sh
 zsh/zsh.d/cache
