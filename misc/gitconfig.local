@@ -30,6 +30,7 @@
 	df = diff
 	lg = log -p
 	tar-gz = !sh -c 'prefix=$(basename $PWD) && ver=$1 && git archive --prefix=\"$prefix-$ver/\" HEAD | gzip > \"$prefix-$ver.tar.gz\"' -
+	ls-ignores = !sh -c 'grep -hv "^#" $(git ls-files | grep .gitignore) .git/info/exclude | sed s:/\\$::g | xargs -I"{}" echo --ignore=\"{}\"'
 
 [apply]
 	whitespace = fix

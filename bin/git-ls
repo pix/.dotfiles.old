@@ -1,0 +1,2 @@
+#!/bin/sh
+ls -hF --color $(git ls-ignores)
