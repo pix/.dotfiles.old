@@ -25,8 +25,7 @@ install-dir-% : %
 git-setup:
 	@echo
 	@echo "  [git]   Init vendors submodules"
-	@git submodule init 
-	@git submodule update
+	@sh -c "if git submodule 2>/dev/null >/dev/null; then git submodule init; git submodule update; else echo '  [git]   submodule unavailable, disabled some vendors'; fi"
 
 install: git-setup $(foreach f, $(CONFIGS), install-dir-$(f) )
 
