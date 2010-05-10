@@ -3,7 +3,7 @@
 # Camille Moncelier <pix@devlife.org>
 #
 # Greatly inspired by  Bruno Bonfils, <asyd@asyd.net>
-#
+# http://svn.asyd.net/svn/zsh/trunk/
 #
 
 # My functions (don't forget to modify fpath before call compinit !!)
