@@ -1,0 +1,12 @@
+# vim: ft=Makefile
+
+default : all
+
+all : $(CONFIGS)
+
+install-file-% : %
+	@echo "  [ln]    Linking $* to ~/.$*"
+	@ln -sfT $(CURDIR)/$* $(HOME)/.$*
+
+install: $(foreach f, $(CONFIGS), install-file-$(f) )
+

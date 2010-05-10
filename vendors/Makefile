@@ -5,21 +5,9 @@ endif
 CONFIGS = \
 					sshuttle 
 
-
-default : all
-
-all : $(CONFIGS)
-
-clean :
-	rm *~ ftp-install-script || true
-
+include ../Makefile.rules
 
 install-file-sshuttle:
-	ln -sf $(CURDIR)/sshuttle/sshuttle ~/.bin/
-
-
-install-file-% : %
-	ln -sfT $(CURDIR)/$* $(HOME)/.$*
-
-install: $(foreach f, $(CONFIGS), install-file-$(f) )
+	@echo "  [ln]    Installing sshuttle to ~/.bin/"
+	@ln -sf $(CURDIR)/sshuttle/sshuttle ~/.bin/
 

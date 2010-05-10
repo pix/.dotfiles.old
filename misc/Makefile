@@ -17,16 +17,11 @@ CONFIGS = \
 					gitconfig \
 					sqliterc
 
-
-default : all
-
-all : $(CONFIGS)
-
-clean :
-	rm *~ ftp-install-script || true
+include ../Makefile.rules
 
 gitconfig : gitconfig.local Makefile
-	sed \
+	@echo "  [sed]   Generating local gitconfig"
+	@sed \
 	-e "s/SMTP_ENCRYPTION/$(SMTP_ENCRYPTION)/g" \
 	-e "s/SMTP_USERNAME/$(SMTP_USERNAME)/g" \
 	-e "s/SMTP_SERVER/$(SMTP_SERVER)/g" \
@@ -34,9 +29,4 @@ gitconfig : gitconfig.local Makefile
 	-e "s/USER_NAME/$(USER_NAME)/g" \
 	-e "s/USER_MAIL/$(USER_MAIL)/g" \
 	< gitconfig.local > gitconfig
-
-install-file-% : %
-	ln -sfT $(CURDIR)/$* $(HOME)/.$*
-
-install: $(foreach f, $(CONFIGS), install-file-$(f) )
 

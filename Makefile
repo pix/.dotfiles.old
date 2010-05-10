@@ -12,13 +12,19 @@ default : all
 all : $(CONFIGS) git-setup
 
 install-dir-bin : bin
-	ln -sfT $(CURDIR)/bin $(HOME)/.bin
+	@echo
+	@echo "  [make]  Intalling user binaries"
+	@echo "  [ln]    Linking $< to ~/.$<"
+	@ln -sfT $(CURDIR)/bin $(HOME)/.bin
 
 install-dir-% : %
-	make -C $* install
+	@echo
+	@echo "  [make]  Entering $<"
+	@make --no-print-directory -C $* install 
 
 git-setup:
-	@echo '[git] submodule init'
+	@echo
+	@echo "  [git]   Init vendors submodules"
 	@git submodule init 
 	@git submodule update
 
