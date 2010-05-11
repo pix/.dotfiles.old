@@ -8,11 +8,37 @@ export RLWRAP_HOME=~/.history
 
 which vim >/dev/null 2>/dev/null
 if [ $? -eq 0 ]; then 
-  export EDITOR=vim
-  alias -g vi='vim'
+    export EDITOR=vim
+    alias vi='vim'
 fi
+
+# ack is ack-grep on debian/ubuntu
+if which ack-grep >&/dev/null; then
+    alias ack='ack-grep'
+fi
+
+# Goodbye more, lets play with most ##########################################
+#
+if which most >& /dev/null ; then
+	alias more='most'
+	alias less='most'
+	export PAGER='most'
+fi
+
+
 
 RUBY_1_8_GEMS=~/.gem/ruby/1.8/bin
 if [[ -d ${RUBY_1_8_GEMS} ]]; then
     export PATH="${PATH}:${RUBY_1_8_GEMS}"
 fi
+
+# GTK FTW !
+export OOO_FORCE_DESKTOP=gnome
+# XFT my friend
+export QT_XFT=1
+export GDK_USE_XFT=1
+# We always want to use ssh for rsync.
+export RSYNC_RSH=ssh
+# And for cvs as well.
+export CVS_RSH=ssh
+
