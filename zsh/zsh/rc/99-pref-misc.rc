@@ -9,7 +9,7 @@ export SAVEHIST=100000
 
 
 # Misc options
-setopt emacs \
+setopt \
   auto_cd \
   autopushd \
   correct \
