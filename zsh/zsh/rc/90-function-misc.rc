@@ -1,7 +1,11 @@
-# Most used commands
+# Most used commands ##################################################
+# vi: ft=zsh
+#
+
 cmdtop(){
 	fc -ln 0 | sed 's/^sudo//g' | awk '{a[$1]++ } END{for(i in a){print a[i] " " i}}'|sort -nr|head -n 20
 }
+
 # Most used commands (percentages)
 cmdtopp(){
 	fc -ln 0 | sed 's/^sudo//g' | awk '{a[$1]++ b++}END{for(i in a){printf "%02.1f%% : %s\n",a[i]/b*100,i}}'|sort -rn|head -n 20

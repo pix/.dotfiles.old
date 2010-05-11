@@ -1,3 +1,8 @@
+#######################################################################
+# Workaround, when drivers maked you cry
+# vi: ft=zsh
+#
+
 function reloadmod(){
 	if [ -z "$1" ] ; then 
 		echo "You should specify a module"

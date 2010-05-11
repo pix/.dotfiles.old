@@ -1,5 +1,7 @@
 # Quick rename ###############################################################
+# vi: ft=zsh
 #
+
 name() {
 	newname=$1
 	vared -c -p 'rename to: ' newname

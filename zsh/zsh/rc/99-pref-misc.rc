@@ -1,3 +1,7 @@
+# Misc tweaks #########################################################
+# vi: ft=zsh
+#
+
 # I like all my history files in ~/.history
 if [[ ! -d ~/.history ]]; then
     mkdir ~/.history

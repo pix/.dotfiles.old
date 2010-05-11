@@ -1,5 +1,7 @@
 # completion menu ############################################################
-#
+# vi: ftp=zsh
+# 
+
 zstyle ':completion:*' menu select=1
 
 # Completion options #########################################################

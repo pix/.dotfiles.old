@@ -1,5 +1,7 @@
 # The 'ls' family (this assumes you use the GNU ls) ##########################
+# vi: ft=zsh
 #
+
 alias la='ls -Al'               # show hidden files
 alias ll='ls -lh'
 alias ls='ls -hF --color'       # add colors for filetype recognition

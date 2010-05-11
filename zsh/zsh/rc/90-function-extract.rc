@@ -1,5 +1,7 @@
 # extract an archive according to file type ##################################
+# vi: ft=zsh
 #
+
 extract () {
 	if [ -f $1 ]; then
 		case $1 in

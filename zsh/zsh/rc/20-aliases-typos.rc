@@ -1,5 +1,7 @@
 # spelling typos - highly personnal :-) ######################################
+# vi: ft=zsh
 # 
+
 alias -g xs='cd'
 alias -g vf='cd'
 alias -g moer='more'

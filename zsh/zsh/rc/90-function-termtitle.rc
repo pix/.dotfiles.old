@@ -1,5 +1,8 @@
-preexec () {
+# Term title ##########################################################
+# vi: ft=zsh
+#
 
+preexec () {
   print -nP '\033]0;'
   if [[ -n "$SSH_CLIENT" ]]; then
     print -nP "$USER@$HOST : " 

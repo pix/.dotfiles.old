@@ -1,5 +1,8 @@
-#
+########################################################################
 # "Safely" remove latex "junk" files
+# vi: ft=zsh
+#
+# TODO: use xargs
 #
 cleantex(){
 	if [ "$1" \!= "nodry" ] ; then

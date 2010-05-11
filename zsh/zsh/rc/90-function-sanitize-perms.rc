@@ -1,5 +1,7 @@
-# Quick rename ###############################################################
+# Quick clean perm ###########################################################
+# vi: ft=zsh
 #
+
 sanitize-perms() {
   if [ $# -ne 0 ]; then
     sudo chmod -Rv a-rwX,u+rwX $*
