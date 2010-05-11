@@ -1,0 +1,63 @@
+# Some usefull aliases ######################################################
+# vi: ft=zsh
+#
+
+alias mv='nocorrect mv'       # no spelling correction on mv
+alias cp='nocorrect cp'
+alias mkdir='nocorrect mkdir'
+
+alias cp='cp -i'
+alias mv='mv -i'
+alias mkdir='mkdir -p'
+alias :wq='exit'
+alias h='history'
+alias j='jobs -l'
+
+alias ..='cd ..'
+alias cd..="cd .."
+
+alias du='du -kh'
+alias hgrep='history | grep'
+alias grep='grep --color'
+alias ncl='nc 127.0.0.1'
+
+alias clean='rm -f *~ *# *.aux *.blg *.log'
+
+alias quickweb='python -m SimpleHTTPServer'
+
+# Goodbye more, lets play with most ##########################################
+#
+MOST=$(whence most)
+if [ $? -eq 0 ] ; then
+	alias more='most'
+	alias less='most'
+	export PAGER='most'
+fi
+
+# personal aliases ###########################################################
+#
+alias rdesktop="rdesktop -r sound:local -r disk:linux=/ -r disk:home=$HOME -x l -K -f -P -a 24"
+
+
+# The 'ls' family (this assumes you use the GNU ls) ##########################
+#
+alias la='ls -Al'               # show hidden files
+alias ll='ls -lh'
+alias ls='ls -hF --color'       # add colors for filetype recognition
+alias lx='ls -lXB'              # sort by extension
+alias lk='ls -lSr'              # sort by size
+alias lc='ls -lcr'              # sort by change time  
+alias lu='ls -lur'              # sort by access time   
+alias lr='ls -lR'               # recursive ls
+alias lt='ls -ltr'              # sort by date
+alias lm='ls -al | more'        # pipe through 'more'
+
+# spelling typos - highly personnal :-) ######################################
+# 
+alias -g xs='cd'
+alias -g vf='cd'
+alias -g moer='more'
+alias -g moew='more'
+alias -g kk='ll'
+alias -g ks='ls'
+

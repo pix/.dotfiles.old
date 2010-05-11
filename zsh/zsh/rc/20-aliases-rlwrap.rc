@@ -1,5 +1,0 @@
-########################################################################
-# Readline support everywhere !
-# vi: ft=zsh 
-
-export RLWRAP_HOME=~/.history
