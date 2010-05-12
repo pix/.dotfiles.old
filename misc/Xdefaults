@@ -1,30 +1,30 @@
 ! Daisuke
-URxvt*background: #000000
-URxvt*foreground: #dcdccc
+urxvt*background: #000000
+urxvt*foreground: #dcdccc
 !black
-URxvt*color0: #1e1e1e
-URxvt*color8: #505050
+urxvt*color0: #1e1e1e
+urxvt*color8: #505050
 !red
-URxvt*color1: #b04020
-URxvt*color9: #dd4010
+urxvt*color1: #b04020
+urxvt*color9: #dd4010
 !green
-URxvt*color2: #afd700
-URxvt*color10: #daff30
+urxvt*color2: #afd700
+urxvt*color10: #daff30
 !yellow
-URxvt*color3: #f7cf0a
-URxvt*color11: #fce70d
+urxvt*color3: #f7cf0a
+urxvt*color11: #fce70d
 !blue
-URxvt*color4: #3060aa
-URxvt*color12: #6099dd
+urxvt*color4: #3060aa
+urxvt*color12: #6099dd
 !magenta
-URxvt*color5: #d6156c
-URxvt*color13: #fe4365
+urxvt*color5: #d6156c
+urxvt*color13: #fe4365
 !cyan
-URxvt*color6: #a0c2de
-URxvt*color14: #c9dee8
+urxvt*color6: #a0c2de
+urxvt*color14: #c9dee8
 !white
-URxvt*color7: #808080
-URxvt*color15: #b0b0b0
+urxvt*color7: #808080
+urxvt*color15: #b0b0b0
 
 ! urxvt settings
 ! 
@@ -62,5 +62,25 @@ yeahconsole*reverseVideo: false
 yeahconsole*inheritPixmap: true
 yeahconsole*saveLines: 10000
 yeahconsole*cursorBlink: true
+!colors
+yeahconsole*background: #000000
+yeahconsole*foreground: #dcdccc
+yeahconsole*color0: #1e1e1e
+yeahconsole*color8: #505050
+yeahconsole*color1: #b04020
+yeahconsole*color9: #dd4010
+yeahconsole*color2: #afd700
+yeahconsole*color10: #daff30
+yeahconsole*color3: #f7cf0a
+yeahconsole*color11: #fce70d
+yeahconsole*color4: #3060aa
+yeahconsole*color12: #6099dd
+yeahconsole*color5: #d6156c
+yeahconsole*color13: #fe4365
+yeahconsole*color6: #a0c2de
+yeahconsole*color14: #c9dee8
+yeahconsole*color7: #808080
+yeahconsole*color15: #b0b0b0
+
 
 *sessionMgt:false
