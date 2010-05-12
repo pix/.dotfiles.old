@@ -1,0 +1,34 @@
+prompt_walterscolor_help () {
+  cat <<'EOF'
+This prompt is color-scheme-able.  You can invoke it thus:
+
+  prompt walterscolor [<color1>] [<color2>]
+
+where the color2 is for the right-hand prompt.
+
+This prompt was stolen from Colin Walters <walters@debian.org>,
+who gives credit to Michel Daenzer <daenzer@debian.org>.
+EOF
+}
+
+prompt_walterscolor_setup () {
+
+# Need this, so the prompt will work
+setopt prompt_subst
+
+autoload -U prompt_special_chars
+prompt_special_chars
+
+local reset="%{$reset_color%}"
+
+if [[ "$TERM" != "dumb" ]]; then
+    export PROMPT="%B%(?..[%?] )%F{${2:-green}}%n@%m%F{${1:-blue}}>%f%b "
+    export RPROMPT="%B%F{${1:-blue}}%~%f%b"
+else
+    export PROMPT="%(?..[%?] )%n@%m:%~> "
+fi
+
+  prompt_opts=(cr percent)
+}
+
+prompt_walterscolor_setup "$@"
