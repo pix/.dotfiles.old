@@ -1,4 +1,10 @@
 "colorscheme zenburn 
+
+"
+" Add bundles to the path
+call pathogen#runtime_append_all_bundles()
+
+
 set t_Co=256 
 
 " File-type highlighting and configuration.
@@ -6,6 +12,7 @@ set t_Co=256
 " to turn on yourself, or just set them all to be sure.
 au BufRead,BufNewFile *.tex setf tex
 syntax on
+filetype off
 filetype on
 filetype plugin on
 filetype indent on
@@ -137,3 +144,4 @@ autocmd FileType python   set noexpandtab
 
 set mouse-=a
 colorscheme desert
+
