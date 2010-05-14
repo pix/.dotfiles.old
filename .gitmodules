@@ -1,3 +1,6 @@
 [submodule "vendors/sshuttle"]
 	path = vendors/sshuttle
 	url = http://github.com/apenwarr/sshuttle.git
+[submodule "vim/vim/bundle/nerdcommenter"]
+	path = vim/vim/bundle/nerdcommenter
+	url = git://github.com/scrooloose/nerdcommenter.git
