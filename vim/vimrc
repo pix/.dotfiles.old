@@ -145,3 +145,8 @@ autocmd FileType python   set noexpandtab
 set mouse-=a
 colorscheme desert
 
+" Use DetectIndent plugin if available
+autocmd BufReadPost * 
+            \ if exists(":DetectIndent") |  
+            \ execute ":DetectIndent" |
+            \  endif
