@@ -15,7 +15,8 @@ CONFIGS = \
 					tmux.conf \
 					gdbinit \
 					gitconfig \
-					sqliterc
+					sqliterc \
+					wgetrc
 
 include ../Makefile.rules
 
