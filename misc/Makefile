@@ -16,7 +16,8 @@ CONFIGS = \
 					gdbinit \
 					gitconfig \
 					sqliterc \
-					wgetrc
+					wgetrc \
+					ackrc
 
 include ../Makefile.rules
 
