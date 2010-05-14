@@ -41,3 +41,5 @@
 	 smtpencryption = SMTP_ENCRYPTION
 	 smtpuser = SMTP_USERNAME
 
+[rerere]
+	enabled = 1
