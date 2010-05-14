@@ -22,7 +22,7 @@ prompt_special_chars
 local reset="%{$reset_color%}"
 
 if [[ "$TERM" != "dumb" ]]; then
-    export PROMPT="%B%(?..[%?] )%F{${2:-green}}%n@%m%F{${1:-blue}}>%f%b "
+    export PROMPT="%B%(?..[%?] )%F{${2:-green}}%n@%m%F{${1:-blue}} >%f%b "
     export RPROMPT="%B%F{${1:-blue}}%~%f%b"
 else
     export PROMPT="%(?..[%?] )%n@%m:%~> "

@@ -61,6 +61,6 @@ LISTMAX=0
 # setup prompt
 autoload -U promptinit
 promptinit
-prompt walterscolor
+prompt walterscolor cyan blue
 
 export PATH=$PATH:~/.bin
