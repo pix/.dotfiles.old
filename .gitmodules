@@ -7,3 +7,6 @@
 [submodule "vim/vim/bundle/detectindent"]
 	path = vim/vim/bundle/detectindent
 	url = git://github.com/ciaranm/detectindent.git
+[submodule "vim/vim/bundle/vim-snipmate"]
+	path = vim/vim/bundle/vim-snipmate
+	url = git://github.com/msanders/snipmate.vim.git
