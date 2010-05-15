@@ -1,1 +1,2 @@
---type-add=bitbake=.bb,.inc
+--type-set=bitbake=.bb,.inc
+--type-add=shell=.rc
