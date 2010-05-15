@@ -36,10 +36,13 @@
 	whitespace = fix
 
 [sendemail]
-	 smtpserver = SMTP_SERVER
-	 smtpserverport = SMTP_PORT
-	 smtpencryption = SMTP_ENCRYPTION
-	 smtpuser = SMTP_USERNAME
+	smtpserver = SMTP_SERVER
+	smtpserverport = SMTP_PORT
+	smtpencryption = SMTP_ENCRYPTION
+	smtpuser = SMTP_USERNAME
 
 [rerere]
 	enabled = 1
+
+[url "git@github.com:GITHUB_USER/"]
+	pushInsteadOf = git://github.com/GITHUB_USER/

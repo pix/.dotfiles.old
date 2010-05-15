@@ -4,6 +4,7 @@ SMTP_USERNAME   = pixdamix@gmail.com
 SMTP_SERVER     = smtp.gmail.com
 SMTP_PORT       = 587
 SMTP_ENCRYPTION = tls
+GITHUB_USER     = pix
 
 ifneq "$(wildcard ../Makefile.local)" ""
 include ../Makefile.local
@@ -21,7 +22,7 @@ CONFIGS = \
 
 include ../Makefile.rules
 
-gitconfig : gitconfig.local Makefile
+gitconfig : gitconfig.in Makefile
 	@echo "  [sed]   Generating local gitconfig"
 	@sed \
 	-e "s/SMTP_ENCRYPTION/$(SMTP_ENCRYPTION)/g" \
@@ -30,5 +31,6 @@ gitconfig : gitconfig.local Makefile
 	-e "s/SMTP_PORT/$(SMTP_PORT)/g" \
 	-e "s/USER_NAME/$(USER_NAME)/g" \
 	-e "s/USER_MAIL/$(USER_MAIL)/g" \
-	< gitconfig.local > gitconfig
+	-e "s/GITHUB_USER/$(GITHUB_USER)/g" \
+	< gitconfig.in > gitconfig
 
