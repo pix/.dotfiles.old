@@ -2,7 +2,6 @@
 " Add bundles to the path
 call pathogen#runtime_append_all_bundles()
 
-
 " File-type highlighting and configuration.
 " Run :filetype (without args) to see what you may have
 " to turn on yourself, or just set them all to be sure.
@@ -132,7 +131,13 @@ autocmd FileType python   set noexpandtab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " I HATE HATE HATE Mouse emulation
 set mouse-=a
-colorscheme desert
+
+
+if has("gui_running")
+  colorscheme ir_black
+else
+  colorscheme desert
+endif
 
 " Do not load gist plugin if we can't use it
 if !executable('git') || !executable('curl')
