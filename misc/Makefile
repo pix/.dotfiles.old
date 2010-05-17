@@ -18,9 +18,14 @@ CONFIGS = \
 					gitconfig \
 					sqliterc \
 					wgetrc \
-					ackrc
+					ackrc \
+					ssh_config
 
 include ../Makefile.rules
+
+install-file-ssh_config:
+	@echo -n "  [ln]    Linking ssh_config to ~/.ssh/config"
+	@[ -h ~/.ssh/config -o ! -f ~/.ssh/config ] && ln -sfT $(CURDIR)/ssh_config $(HOME)/.ssh/config && echo || echo " : IGNORED"
 
 gitconfig : gitconfig.in Makefile
 	@echo "  [sed]   Generating local gitconfig"
