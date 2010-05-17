@@ -23,6 +23,7 @@
 
 [alias]
 	l = log --graph --decorate --oneline
+	amend = commit --amend
 	st = status
 	co = checkout
 	ci = commit
