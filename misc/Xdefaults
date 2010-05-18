@@ -56,7 +56,6 @@ yeahconsole*aniDelay:0
 yeahconsole*stepSize:100
 yeahconsole*handleWidth:10
 yeahconsole*term:urxvt
-yeahconsole*termName:rxvt-256color
 yeahconsole*scrollBar: false
 yeahconsole*reverseVideo: false
 yeahconsole*inheritPixmap: true
