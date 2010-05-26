@@ -10,3 +10,6 @@
 [submodule "vim/vim/bundle/vim-snipmate"]
 	path = vim/vim/bundle/vim-snipmate
 	url = git://github.com/msanders/snipmate.vim.git
+[submodule "vim/vim/bundle/vim-taglist"]
+	path = vim/vim/bundle/vim-taglist
+	url = git://github.com/pix/vim-taglist.git
