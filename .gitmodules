@@ -13,3 +13,6 @@
 [submodule "vim/vim/bundle/vim-taglist"]
 	path = vim/vim/bundle/vim-taglist
 	url = git://github.com/pix/vim-taglist.git
+[submodule "vim/vim/bundle/vim-gist"]
+	path = vim/vim/bundle/vim-gist
+	url = git://github.com/mattn/gist-vim.git
