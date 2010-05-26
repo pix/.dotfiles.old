@@ -120,6 +120,10 @@ autocmd BufReadPost *
             \  endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Make some plugins stfu
+let g:gist_shutup = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " spaces spaces spaces
 set tabstop=4
 set shiftwidth=4
