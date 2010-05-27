@@ -137,3 +137,7 @@ autocmd FileType python   set noexpandtab
 set mouse-=a
 colorscheme desert
 
+" Do not load gist plugin if we can't use it
+if !executable('git') || !executable('curl')
+	let g:loaded_gist_vim = 1
+endif
