@@ -19,3 +19,6 @@
 [submodule "vim/vim/bundle/vim-align"]
 	path = vim/vim/bundle/vim-align
 	url = git://github.com/pix/vim-align.git
+[submodule "vim/vim/bundle/vim-hints_man"]
+	path = vim/vim/bundle/vim-hints_man
+	url = git://github.com/pix/vim-hints_man.git

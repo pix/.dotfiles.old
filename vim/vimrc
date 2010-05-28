@@ -141,3 +141,12 @@ colorscheme desert
 if !executable('git') || !executable('curl')
 	let g:loaded_gist_vim = 1
 endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Used for C and Hint man plugin
+autocmd FileType c,cpp set ch=2
+if &bg == "dark"
+    hi HintHL cterm=bold ctermfg=white ctermbg=black guifg=blue3 guibg=white
+else
+    hi HintHL cterm=bold ctermfg=black ctermbg=white guifg=white guibg=blue3
+endif
