@@ -25,3 +25,6 @@
 [submodule "vim/vim/bundle/vim-syntastic"]
 	path = vim/vim/bundle/vim-syntastic
 	url = git://github.com/scrooloose/syntastic.git
+[submodule "vim/vim/bundle/vim-surround"]
+	path = vim/vim/bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git
