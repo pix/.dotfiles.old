@@ -20,3 +20,9 @@ dirtop(){
 mkcd(){
   mkdir $1 && cd $1
 }
+
+if which realpath >/dev/null; then
+  function cdreal() {
+  	cd $(realpath ${1:-.})
+  }
+fi
