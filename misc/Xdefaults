@@ -1,30 +1,86 @@
-! Daisuke
+!! Daisuke
+!urxvt*background: #000000
+!urxvt*foreground: #dcdccc
+!! black
+!urxvt*color0: #1e1e1e
+!urxvt*color8: #505050
+!! red
+!urxvt*color1: #b04020
+!urxvt*color9: #dd4010
+!! green
+!urxvt*color2: #afd700
+!urxvt*color10: #daff30
+!! yellow
+!urxvt*color3: #f7cf0a
+!urxvt*color11: #fce70d
+!! blue
+!urxvt*color4: #3060aa
+!urxvt*color12: #6099dd
+!! magenta
+!urxvt*color5: #d6156c
+!urxvt*color13: #fe4365
+!! cyan
+!urxvt*color6: #a0c2de
+!urxvt*color14: #c9dee8
+!! white
+!urxvt*color7: #808080
+!urxvt*color15: #b0b0b0
+
+! MrElendig
 urxvt*background: #000000
 urxvt*foreground: #dcdccc
-!black
-urxvt*color0: #1e1e1e
-urxvt*color8: #505050
-!red
-urxvt*color1: #b04020
-urxvt*color9: #dd4010
-!green
-urxvt*color2: #afd700
-urxvt*color10: #daff30
-!yellow
-urxvt*color3: #f7cf0a
-urxvt*color11: #fce70d
-!blue
-urxvt*color4: #3060aa
-urxvt*color12: #6099dd
-!magenta
-urxvt*color5: #d6156c
-urxvt*color13: #fe4365
-!cyan
-urxvt*color6: #a0c2de
-urxvt*color14: #c9dee8
-!white
-urxvt*color7: #808080
-urxvt*color15: #b0b0b0
+! black
+urxvt*color0: #000000
+urxvt*color8: #9999AA
+! red
+urxvt*color1: #DE1923
+urxvt*color9: #FF6050
+! green
+urxvt*color2: #559933
+urxvt*color10: #66D077
+! yellow
+urxvt*color3: #FF9922
+urxvt*color11: #FFFFAF
+! blue
+urxvt*color4: #3579A8
+urxvt*color12: #4EB4FA
+! magenta
+urxvt*color5: #BB88DD
+urxvt*color13: #D7AFD7
+! cyan
+urxvt*color6: #00BBDD
+urxvt*color14: #0DEBFF
+! white
+urxvt*color7: #C7C7C7
+urxvt*color15: #D9D9D9
+
+!! Gigamo
+!urxvt*background: #000000
+!urxvt*foreground: #dcdccc
+!! Black
+!urxvt*color0: #1e1e1e
+!urxvt*color8: #555753
+!! Red
+!urxvt*color1: #CC0000
+!urxvt*color9: #EF2929
+!! Green
+!urxvt*color2: #4E9A06
+!urxvt*color10: #8AE234
+!! Yellow
+!urxvt*color3: #C4A000
+!urxvt*color11: #FCE94F
+!! Blue
+!urxvt*color4: #3465A4
+!urxvt*color12: #729FCF
+!! Purple
+!urxvt*color5: #75507B
+!urxvt*color13: #AD7FA8
+!! Cyan
+!urxvt*color6: rgb:06/98/9A
+!urxvt*color14: #34E2E2
+!! White
+!urxvt*color7: #9f9f9f
+!urxvt*color15: #e0e0e0
 
 ! urxvt settings
 ! 
