@@ -22,3 +22,6 @@
 [submodule "vim/vim/bundle/vim-hints_man"]
 	path = vim/vim/bundle/vim-hints_man
 	url = git://github.com/pix/vim-hints_man.git
+[submodule "vim/vim/bundle/vim-syntastic"]
+	path = vim/vim/bundle/vim-syntastic
+	url = git://github.com/scrooloose/syntastic.git

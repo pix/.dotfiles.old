@@ -1,5 +1,3 @@
-"colorscheme zenburn 
-
 "
 " Add bundles to the path
 call pathogen#runtime_append_all_bundles()
@@ -150,3 +148,7 @@ if &bg == "dark"
 else
     hi HintHL cterm=bold ctermfg=black ctermbg=white guifg=white guibg=blue3
 endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic
+let g:syntastic_enable_signs=1
