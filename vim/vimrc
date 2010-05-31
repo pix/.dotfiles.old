@@ -156,6 +156,11 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic
 let g:syntastic_enable_signs=1
+let g:syntastic_disabled_filetypes = ['c', 'cpp']
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" A.vim
+let g:alternateNoDefaultAlternate = 1 " Do not alternate if not found
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Source a local configuration file if available.
