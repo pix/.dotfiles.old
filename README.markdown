@@ -18,6 +18,7 @@ Information about dotfiles
   - [detectindent]    : Indentation levels are autodetected
   - [yankring]        : :YRShow to show yank history
   - [syntastic]       : Automatic syntax checking
+  - [A]               : :A to alternate files quickly (.c --> .h etc) 
 
 - tmux
   - Alt-F1 -> Alt-F12 : Selects corresponding windows
@@ -35,3 +36,4 @@ Information about dotfiles
 [nerdcommenter]: http://www.vim.org/scripts/script.php?script_id=1218
 [detectindent]:  http://www.vim.org/scripts/script.php?script_id=1171
 [yankring]:      http://www.vim.org/scripts/script.php?script_id=1234
+[a]:             http://www.vim.org/scripts/script.php?script_id=31
