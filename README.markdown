@@ -19,6 +19,7 @@ Information about dotfiles
   - [yankring]        : :YRShow to show yank history
   - [syntastic]       : Automatic syntax checking
   - [A]               : :A to alternate files quickly (.c --> .h etc) 
+  - [Doxygentoolkit]  : :Dox to generate doxygen comments
 
 - tmux
   - Alt-F1 -> Alt-F12 : Selects corresponding windows
@@ -37,3 +38,4 @@ Information about dotfiles
 [detectindent]:  http://www.vim.org/scripts/script.php?script_id=1171
 [yankring]:      http://www.vim.org/scripts/script.php?script_id=1234
 [a]:             http://www.vim.org/scripts/script.php?script_id=31
+[doxygentoolkit] http://www.vim.org/scripts/script.php?script_id=987
