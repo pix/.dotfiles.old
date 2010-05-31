@@ -30,12 +30,13 @@ Information about dotfiles
   - git rank-contributors : rank contributors by the total size of the diffs they're responsible for
   - git ls                : ls files according to .gitignore
 
-[taglist]:       http://vim-taglist.sourceforge.net/manual.html
-[bufferlist]:    http://www.vim.org/scripts/script.php?script_id=1325
-[align]:         http://www.vim.org/scripts/script.php?script_id=294
-[surround]:      http://github.com/tpope/vim-surround/blob/master/doc/surround.txt
-[nerdcommenter]: http://www.vim.org/scripts/script.php?script_id=1218
-[detectindent]:  http://www.vim.org/scripts/script.php?script_id=1171
-[yankring]:      http://www.vim.org/scripts/script.php?script_id=1234
-[a]:             http://www.vim.org/scripts/script.php?script_id=31
-[doxygentoolkit] http://www.vim.org/scripts/script.php?script_id=987
+[taglist]:        http://vim-taglist.sourceforge.net/manual.html
+[bufferlist]:     http://www.vim.org/scripts/script.php?script_id=1325
+[align]:          http://www.vim.org/scripts/script.php?script_id=294
+[surround]:       http://github.com/tpope/vim-surround/blob/master/doc/surround.txt
+[nerdcommenter]:  http://www.vim.org/scripts/script.php?script_id=1218
+[detectindent]:   http://www.vim.org/scripts/script.php?script_id=1171
+[yankring]:       http://www.vim.org/scripts/script.php?script_id=1234
+[a]:              http://www.vim.org/scripts/script.php?script_id=31
+[syntastic]:      http://www.vim.org/scripts/script.php?script_id=2736
+[doxygentoolkit]: http://www.vim.org/scripts/script.php?script_id=987
