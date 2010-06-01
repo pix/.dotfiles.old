@@ -163,6 +163,21 @@ let g:syntastic_disabled_filetypes = ['c', 'cpp']
 let g:alternateNoDefaultAlternate = 1 " Do not alternate if not found
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Map C-Down and C-Up to move lines up/down
+nmap Ob <C-Down>
+nmap Oa <C-Up>
+imap Ob <C-Down>
+imap Oa <C-Up>
+vmap Ob <C-Down>
+vmap Oa <C-Up>
+nmap <C-Down> :m+<CR>==
+nmap <C-Up> :m-2<CR>==
+imap <C-Down> <Esc>:m+<CR>==gi
+imap <C-Up> <Esc>:m-2<CR>==gi
+vmap <C-Down> :m'>+<CR>gv=gv
+vmap <C-Up> :m-2<CR>gv=gv
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Source a local configuration file if available.
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
