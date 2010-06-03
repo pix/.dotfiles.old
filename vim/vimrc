@@ -161,6 +161,10 @@ let g:syntastic_disabled_filetypes = ['c', 'cpp']
 let g:alternateNoDefaultAlternate = 1 " Do not alternate if not found
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" YankRing
+let g:yankring_history_file = '.history/yankring'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Map C-Down and C-Up to move lines up/down
 nmap Ob <C-Down>
 nmap Oa <C-Up>
