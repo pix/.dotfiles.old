@@ -83,6 +83,9 @@ let highlight_function_name = 1
 map  <C-s> :w!<CR>
 imap <C-s> <Esc>:w!<CR>a
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Clear current search highlight
+nnoremap <esc> :noh<return><esc>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Write file with sudo // Life saver !
@@ -91,6 +94,7 @@ function! Sudowq()
 	exe "e!"
 endfunction
 nmap <F2> :call Sudowq()<CR><Enter>
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -108,38 +112,34 @@ map <silent> <C-v><C-v> :call BufferList()<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use DetectIndent plugin if available
-autocmd BufReadPost * 
-            \ if exists(":DetectIndent") |  
-            \ execute ":DetectIndent" |
-            \  endif
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Make some plugins stfu
-let g:gist_shutup = 1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" spaces spaces spaces
 set tabstop=4
 set shiftwidth=4
 set autoindent
 set expandtab
+
 autocmd FileType make     set noexpandtab
 autocmd FileType python   set noexpandtab
+autocmd BufReadPost * 
+            \ if exists(":DetectIndent") |
+            \   execute ":DetectIndent" |
+            \ endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Make some plugins stfu
+if !executable('git') || !executable('curl')
+	let g:loaded_gist_vim = 1
+endif
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " I HATE HATE HATE Mouse emulation
 set mouse-=a
 
-
 if has("gui_running")
   colorscheme ir_black
 else
   colorscheme desert
-endif
-
-" Do not load gist plugin if we can't use it
-if !executable('git') || !executable('curl')
-	let g:loaded_gist_vim = 1
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
