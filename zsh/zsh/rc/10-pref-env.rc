@@ -44,3 +44,6 @@ export CVS_RSH=ssh
 
 # Programming and C manuals first
 export MANSECT="3:1:5:2:4:8:9:7:6"
+
+# disable XON/XOFF flow control (^s/^q)
+stty -ixon
