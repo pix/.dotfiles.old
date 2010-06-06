@@ -42,3 +42,5 @@ export RSYNC_RSH=ssh
 # And for cvs as well.
 export CVS_RSH=ssh
 
+# Programming and C manuals first
+export MANSECT="3:1:5:2:4:8:9:7:6"

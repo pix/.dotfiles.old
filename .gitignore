@@ -11,6 +11,9 @@ vim/vim/tmp
 # bin/sshuttle is created by make install
 bin/sshuttle
 
+# cache files
+zsh/zsh/cache/
+
 # gitconfig machinery
 Makefile.local
 misc/gitconfig
