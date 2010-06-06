@@ -70,6 +70,10 @@ set shortmess=atI
 " I Never, ever used background=light
 set background=dark
 
+" Automatically read a file again if it has been modified outside vim
+" and not in the current session
+set autoread
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" php
@@ -115,7 +119,7 @@ map <silent> <C-v><C-v> :call BufferList()<CR>
 
 set tabstop=4
 set shiftwidth=4
-set autoindent
+set autoindent smartindent
 set expandtab
 
 autocmd FileType make     set noexpandtab
@@ -190,6 +194,12 @@ vmap Oc <C-Right>
 
 map <C-Right> <C-]>
 map <C-Left> <C-T>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Get rid of this stupid default pink background 
+highlight Pmenu ctermbg=0 ctermfg=5 
+highlight PmenuSel cterm=bold ctermbg=5 ctermfg=0 
+highlight PmenuSbar ctermbg=5 ctermfg=0 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Source a local configuration file if available.
