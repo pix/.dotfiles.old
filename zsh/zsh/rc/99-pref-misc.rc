@@ -40,6 +40,10 @@ setopt  \
 # why do I need this ?
 fc -R
 
+# automatically quotes metacharacter while typing a url
+autoload -U url-quote-magic
+zle -N self-insert url-quote-magic
+
 # wait 10 seconds before querying for a rm which contains a *
 setopt rmstarwait
 
