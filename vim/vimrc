@@ -202,6 +202,20 @@ highlight PmenuSel cterm=bold ctermbg=5 ctermfg=0
 highlight PmenuSbar ctermbg=5 ctermfg=0 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" OmniCppComplete
+autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+set completeopt=menuone,menu,longest,preview
+let OmniCpp_DefaultNamespaces   = ["std", "_GLIBCXX_STD"]
+let OmniCpp_GlobalScopeSearch   = 1
+let OmniCpp_MayCompleteArrow    = 1 " autocomplete after ->
+let OmniCpp_MayCompleteDot      = 1 " autocomplete after .
+let OmniCpp_MayCompleteScope    = 1 " autocomplete after ::
+let OmniCpp_NamespaceSearch     = 1
+let OmniCpp_SelectFirstItem     = 2 " select first item (but don't insert)
+let OmniCpp_ShowAccess          = 1
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function prototype (i.e. parameters) in popup window
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Source a local configuration file if available.
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local

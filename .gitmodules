@@ -31,3 +31,6 @@
 [submodule "vim/vim/bundle/vim-vcscommand"]
 	path = vim/vim/bundle/vim-vcscommand
 	url = git://repo.or.cz/vcscommand.git
+[submodule "vim/vim/bundle/vim-omnicppcomplete"]
+	path = vim/vim/bundle/vim-omnicppcomplete
+	url = git://github.com/MasterKey/OmniCppComplete.git
