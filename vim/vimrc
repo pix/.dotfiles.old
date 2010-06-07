@@ -99,7 +99,9 @@ function! Sudowq()
 endfunction
 nmap <F2> :call Sudowq()<CR><Enter>
 
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" In zsh: bindkey "^F" edit-command-line, just colorize the tmp file
+autocmd BufReadPost /tmp/zshecl* set filetype=zsh
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ctags functions
