@@ -218,6 +218,11 @@ let OmniCpp_ShowAccess          = 1
 let OmniCpp_ShowPrototypeInAbbr = 1 " show function prototype (i.e. parameters) in popup window
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Alternate ( A.vim )
+let g:alternateNoDefaultAlternate = 1
+let g:alternateRelativeFiles = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Source a local configuration file if available.
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
