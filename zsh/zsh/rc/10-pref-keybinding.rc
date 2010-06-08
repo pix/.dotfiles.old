@@ -56,6 +56,10 @@ if [[ "$TERM" != emacs ]]; then
 		"${terminfo[kend]/O/[}" end-of-line
 fi
 
+# Edit command line in $EDITOR
 autoload -U   edit-command-line
 zle      -N   edit-command-line
 bindkey  "^F" edit-command-line
+
+# Push a command onto a stack allowing you to run another command first
+bindkey  "^J" push-line
