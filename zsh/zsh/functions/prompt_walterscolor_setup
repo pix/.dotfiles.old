@@ -11,6 +11,12 @@ who gives credit to Michel Daenzer <daenzer@debian.org>.
 EOF
 }
 
+schroot_info () {
+  if [ -n "$SCHROOT_SESSION_ID" ]; then
+    echo "%B%F{red}[${SCHROOT_SESSION_ID}]%f%b "
+  fi
+}
+
 prompt_walterscolor_setup () {
 
 # Need this, so the prompt will work
@@ -22,7 +28,7 @@ prompt_special_chars
 local reset="%{$reset_color%}"
 
 if [[ "$TERM" != "dumb" ]]; then
-    export PROMPT="%B%(?..[%?] )%F{${2:-green}}%n@%m%F{${1:-blue}} >%f%b "
+    export PROMPT="$(schroot_info)%B%(?..[%?] )%F{${2:-green}}%n@%m%F{${1:-blue}} >%f%b "
     export RPROMPT="%B%F{${1:-blue}}%~%f%b"
 else
     export PROMPT="%(?..[%?] )%n@%m:%~> "
