@@ -30,6 +30,11 @@ Information about dotfiles
   - git rank-contributors : rank contributors by the total size of the diffs they're responsible for
   - git ls                : ls files according to .gitignore
 
+- zsh
+  - <C-F> : Edit the current command line in vi
+  - <C-J> : Push a command onto a stack
+
+
 [taglist]:        http://vim-taglist.sourceforge.net/manual.html
 [bufferlist]:     http://www.vim.org/scripts/script.php?script_id=1325
 [align]:          http://www.vim.org/scripts/script.php?script_id=294
