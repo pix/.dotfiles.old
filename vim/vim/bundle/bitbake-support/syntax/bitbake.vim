@@ -69,7 +69,7 @@ syn match bbStatementLine       "^\(addtask\|addhandler\|after\|before\|EXPORT_F
 syn keyword bbOEFunctions       do_fetch do_unpack do_patch do_configure do_compile do_stage do_install do_package contained
 
 " Generic Functions
-syn match bbFunction            "\h[0-9A-Za-z_-]*" display contained contains=bbOEFunctions
+syn match bbFunction            "\h[${}0-9A-Za-z_-]*" display contained contains=bbOEFunctions
 
 " BitBake shell metadata
 syn include @shell syntax/sh.vim
@@ -77,7 +77,7 @@ if exists("b:current_syntax")
   unlet b:current_syntax
 endif
 syn keyword bbShFakeRootFlag    fakeroot contained
-syn match bbShFuncDef           "^\(fakeroot\s*\)\?\([0-9A-Za-z_-]\+\)\(python\)\@<!\(\s*()\s*\)\({\)\@=" contains=bbShFakeRootFlag,bbFunction,bbDelimiter nextgroup=bbShFuncRegion skipwhite
+syn match bbShFuncDef           "^\(fakeroot\s*\)\?\([0-9A-Za-z_-]\+\(\${\([0-9A-Za-z_-]\+\)}\)*\)\(python\)\@<!\(\s*()\s*\)\({\)\@=" contains=bbShFakeRootFlag,bbFunction,bbDelimiter nextgroup=bbShFuncRegion skipwhite
 syn region bbShFuncRegion       matchgroup=bbDelimiter start="{\s*$" end="^}\s*$" keepend contained contains=@shell
 
 " BitBake python metadata
