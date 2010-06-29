@@ -34,3 +34,6 @@
 [submodule "vim/vim/bundle/vim-omnicppcomplete"]
 	path = vim/vim/bundle/vim-omnicppcomplete
 	url = git://github.com/MasterKey/OmniCppComplete.git
+[submodule "vim/vim/bundle/vim-known_hosts.git"]
+	path = vim/vim/bundle/vim-known_hosts.git
+	url = git://github.com/pix/vim-known_hosts.git
