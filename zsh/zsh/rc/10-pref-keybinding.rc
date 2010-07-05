@@ -1,7 +1,7 @@
 # Key binding ################################################################
 # vi: ft=zsh
 #
-
+zmodload zsh/termcap
 setopt emacs
 
 if [[ "$TERM" != emacs ]]; then
