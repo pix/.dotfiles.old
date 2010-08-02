@@ -1,0 +1,19 @@
+#!/bin/sh
+uploadImage() {
+
+      curl -s -F "image=@$1" -F "key=486690f872c678126a2c09a9e196ce1b" http://imgur.com/api/upload.xml | grep -E -o "<original_image>(.)*</original_image>" | grep -E -o "http://i.imgur.com/[^<]*"
+
+}
+AFILE=$(mktemp).jpg
+import $* $AFILE
+
+URL=$(uploadImage $AFILE)
+rm $AFILE
+
+if [ -x /usr/bin/xclip ]; then
+      echo $URL | xclip -selection c
+fi
+if [ -x /usr/bin/notify-send ]; then
+      notify-send "Done: $URL"
+fi
+echo $URL
