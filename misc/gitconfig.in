@@ -23,6 +23,8 @@
 
 [alias]
 	l = log --graph --decorate --oneline
+	remotes = remote --verbose show
+	branches = branch --verbose -a
 	amend = commit --amend
 	st = status
 	co = checkout
