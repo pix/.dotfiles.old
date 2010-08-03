@@ -119,9 +119,7 @@ urxvt.inheritPixmap: true
 urxvt.saveLines: 10000
 urxvt.cursorBlink: true
 urxvt.print-pipe: cat > $(TMPDIR=$HOME mktemp urxvt.XXXXX)
-urxvt.perl-ext-common: default,selection,matcher,searchable-scrollback<M-s>/
-urxvt*matcher.button: 1                   /* match left-mouse-button */
-urxvt*urlLauncher: firefox                /* launch firefox on matched text */
+urxvt.perl-ext-common:  default,matcher
 
 ! Vim
 Vim*useSchemes:	all
