@@ -1,11 +1,23 @@
-#!/bin/sh
+#!/bin/bash
 uploadImage() {
 
       curl -s -F "image=@$1" -F "key=486690f872c678126a2c09a9e196ce1b" http://imgur.com/api/upload.xml | grep -E -o "<original_image>(.)*</original_image>" | grep -E -o "http://i.imgur.com/[^<]*"
 
 }
 AFILE=$(mktemp).jpg
-import $* $AFILE
+OPTS="$*"
+
+if [[ !("$OPTS" =~ "-window") ]]; then
+      id=$(xwininfo -int |grep 'Window id'|awk '{print $4}')
+      if [ "$?" -ne 0 ]; then
+            exit
+      fi
+      OPTS="${OPTS} -window $id"
+      echo "Capturing window-id: $id"
+fi
+
+
+import $OPTS $AFILE
 
 URL=$(uploadImage $AFILE)
 rm $AFILE
