@@ -23,7 +23,28 @@ URL=$(uploadImage $AFILE)
 rm $AFILE
 
 if [ -x /usr/bin/xclip ]; then
+      echo "Using xclip"
       echo $URL | xclip -selection c
+elif [ -x /usr/bin/python ]; then
+      echo "Using gtk python"
+      SCRIPT="
+import gtk, sys, os
+count = 0
+def wait_before_exiting(_a,_b):
+  global count;
+  count += 1
+  if count > 1:
+    sys.exit();
+cb = gtk.Clipboard();
+cb.connect('owner-change', wait_before_exiting)
+cb.set_text(sys.stdin.read())
+if os.fork() == 0:
+   gtk.main()
+sys.exit(0)"
+      echo $URL | python -c "${SCRIPT}" 2>/dev/null
+      if [ $? -ne 0 ]; then
+        echo "Clipboard copy failed"
+      fi
 fi
 if [ -x /usr/bin/notify-send ]; then
       notify-send "Done: $URL"
