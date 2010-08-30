@@ -6,5 +6,5 @@ Host ariadne-term*
   StrictHostKeyChecking no
   UserKnownHostsFile /dev/null
 
-Host ariadne-oe
+Host oe userspace
   User cmoncelier
