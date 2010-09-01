@@ -6,5 +6,8 @@ Host ariadne-term*
   StrictHostKeyChecking no
   UserKnownHostsFile /dev/null
 
-Host oe userspace
+Host cortex
+  User pix
+
+Host oe userspace rasalhague
   User cmoncelier
