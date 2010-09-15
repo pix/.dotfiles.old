@@ -19,7 +19,8 @@ CONFIGS = \
 					sqliterc \
 					wgetrc \
 					ackrc \
-					ssh_config
+					ssh_config \
+					ctags
 
 include ../Makefile.rules
 

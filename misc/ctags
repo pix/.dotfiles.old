@@ -1,0 +1,3 @@
+--langdef=xbmc
+--langmap=xbmc:.xml
+--regex-xbmc=/<include[ \t]*name="([a-zA-Z0-9_]+)"/\1/d,definition/
