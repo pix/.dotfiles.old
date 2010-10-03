@@ -225,6 +225,10 @@ let g:alternateNoDefaultAlternate = 1
 let g:alternateRelativeFiles = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Openssl
+let g:openssl_backup = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Source a local configuration file if available.
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
