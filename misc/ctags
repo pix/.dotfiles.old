@@ -1,3 +1,5 @@
 --langdef=xbmc
 --langmap=xbmc:.xml
 --regex-xbmc=/<include[ \t]*name="([a-zA-Z0-9_]+)"/\1/d,definition/
+--regex-xbmc=/<control[^>]*id="([a-zA-Z0-9_]+)"/\1/d,definition/
+--regex-xbmc=/<name>([a-zA-Z0-9_]+)<\/name>/\1/d,definition/
