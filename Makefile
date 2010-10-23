@@ -27,5 +27,9 @@ git-setup:
 	@echo "  [git]   Init vendors submodules"
 	@sh -c "if git submodule 2>/dev/null >/dev/null; then git submodule init; git submodule update; else echo '  [git]   submodule unavailable, disabled some vendors'; fi"
 
-install: git-setup $(foreach f, $(CONFIGS), install-dir-$(f) )
+$(HOME)/.history:
+	@echo "  [make]  Creating ~/.history"
+	@mkdir $(HOME)/.history 2>/dev/null
+
+install: git-setup $(foreach f, $(CONFIGS), install-dir-$(f) ) $(HOME)/.history
 
