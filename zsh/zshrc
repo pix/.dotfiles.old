@@ -63,4 +63,6 @@ autoload -U promptinit
 promptinit
 prompt walterscolor cyan blue
 
-export PATH=$PATH:~/.bin
+for dir in $(find ~/.bin/ -type d); do
+    export PATH=$PATH:$dir
+done

@@ -102,4 +102,6 @@ for _source in ~/.bash.d/*.sh; do
   source $_source
 done
 
-export PATH=$PATH:~/.bin
+for dir in $(find ~/.bin/ -type d); do
+  export PATH=$PATH:$dir
+done
