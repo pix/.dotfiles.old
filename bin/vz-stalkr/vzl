@@ -1,0 +1,31 @@
+#!/bin/bash
+# Nice output for vzlist: adds VE name, ip, hostname
+
+{
+echo "NAME ID STATUS CPUUNITS IP HOSTNAME LOAD_AVERAGE PROC RAM BAR/LIM DISK SL/HL"
+vzlist -H -o veid,status,cpuunits,laverage,numproc,privvmpages,privvmpages.b,privvmpages.l,diskspace,diskspace.s,diskspace.h "$@" \
+  |while read ID S C L NP VM VMB VML D DS DH; do
+    [ "$VM" != "-" ] && VM="$(printf '%4s' $[$VM*4/1024])M"
+    VMB="$[$VMB*4/1024]"; [ $VMB -gt 1023 ] && VMB="$[$VMB/1024]G" || VMB="${VMB}M"
+    VML="$[$VML*4/1024]"; [ $VML -gt 1023 ] && VML="$[$VML/1024]G" || VML="${VML}M"
+    [ "$D" != "-" ] && D="$[$D/1024]" || D=0
+    [ $D -gt 1023 ] && D="$[$D/1024]G" || { [ $D -ne 0 ] && D="${D}M" || D="-"; }
+    DS="$[$DS/1024]"; [ $DS -gt 1023 ] && DS="$[$DS/1024]G" || DS="${DS}M"
+    DH="$[$DH/1024]"; [ $DH -gt 1023 ] && DH="$[$DH/1024]G" || DH="${DH}M"
+    IP=$(echo $(vzgetip $ID) |sed 's/ /,/g')
+    [ -z "$IP" ] && IP="-"
+    echo "$(vzgetname $ID) $ID $S $C $IP $(vzgethostname $ID) $L $NP $VM $VMB:$VML $D $DS:$DH"
+done 
+} |column -t
+
+echo "Total VE: $(vzlist -H |wc -l) running, $(vzlist -HS |wc -l) not running, $(vzlist -Ha |wc -l) total"
+
+RU=$(free -m |grep buffers/cache |awk '{print $3}')
+RT=$(free -m |grep Mem |awk '{print $2}')
+SU=$(free -m |grep Swap |awk '{print $3}')
+ST=$(free -m |grep Swap |awk '{print $2}')
+echo "RAM: ${RU}M/${RT}M ($[100*$RU/$RT]%) - Swap: ${SU}M/${ST}M ($[100*$SU/$ST]%)"
+
+C=$(vzcpucheck |awk 'BEGIN{FS=":"}{if(NR==1)print substr($2,2)}')
+PN=$(vzcpucheck |awk 'BEGIN{FS=":"}{if(NR==2)print substr($2,2)}')
+echo "CPU units utilization: $C/$PN ($[100*$C/$PN]%)"

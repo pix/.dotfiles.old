@@ -1,0 +1,3 @@
+#!/bin/bash
+# Get all containers ids
+vzlist $@ |awk '$1 ~ "[0-9]+" {print $1}'

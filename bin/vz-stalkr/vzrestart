@@ -1,0 +1,3 @@
+#!/bin/bash
+# Restart container by name
+vzctl restart $(vzresolvename $1)

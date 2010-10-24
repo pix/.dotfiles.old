@@ -1,0 +1,4 @@
+#!/bin/bash
+# Get container id by container name, if it's Hardware Node reply id 0
+[ "$(hostname -s)" == "$1" ] && echo 0 && exit
+grep -H 'NAME="'$1'"' /etc/vz/conf/*.conf | cut -d: -f1 | sed 's,/etc/vz/conf/\([0-9]*\)\.conf,\1,'

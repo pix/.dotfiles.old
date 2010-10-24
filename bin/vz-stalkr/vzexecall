@@ -1,0 +1,11 @@
+#!/bin/bash
+# Execute command on all containers and show output
+if [ $# -lt 1 ]; then
+	echo "Usage: $0 <command to run on all running VE>"
+	exit 0
+fi
+for id in $(vzids); do
+	echo --- VE $id -------------------------------------------------------------
+	vzctl exec $id $@
+	echo
+done

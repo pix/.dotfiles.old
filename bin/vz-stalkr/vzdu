@@ -1,0 +1,3 @@
+#!/bin/bash
+# Calculate disk space of all containers
+du -sh /var/lib/vz/private/*

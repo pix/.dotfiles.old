@@ -1,0 +1,5 @@
+#!/bin/bash
+# Execute command into container by name
+N=$1
+shift
+vzctl exec $(vzresolvename $N) $@

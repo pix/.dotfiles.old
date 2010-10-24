@@ -1,0 +1,4 @@
+#!/bin/bash
+# Get IP addresses of a container by id
+F="/var/lib/vz/private/$1/etc/network/interfaces"
+[ -f "$F" ] && grep '^\s*address' "$F" |awk '{if (($2 != "127.0.0.1") && ($2 != "::1")) print $2}'

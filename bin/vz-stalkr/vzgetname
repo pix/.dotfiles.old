@@ -1,0 +1,5 @@
+#!/bin/bash
+# Get container name by id, 0 means Hardware Node so reply hostname
+[ "$1" == "0" ] && hostname -s && exit
+F="/etc/vz/conf/$1.conf"
+[ -f "$F" ] && awk '$1 ~ "^NAME=" {split($1,A,"="); split(A[2],B,"\""); print B[2]}' "$F"

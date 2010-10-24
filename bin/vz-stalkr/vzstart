@@ -1,0 +1,3 @@
+#!/bin/bash
+# Start container by name
+vzctl start $(vzresolvename $1)

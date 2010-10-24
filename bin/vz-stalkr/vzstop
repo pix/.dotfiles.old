@@ -1,0 +1,3 @@
+#!/bin/bash
+# Stop container by name
+vzctl stop $(vzresolvename $1)

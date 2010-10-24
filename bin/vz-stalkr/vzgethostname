@@ -1,0 +1,4 @@
+#!/bin/bash
+# Get hostname of a container by id
+F="/var/lib/vz/private/$1/etc/hostname"
+[ -f "$F" ] && cat "$F"
