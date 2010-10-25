@@ -1,6 +1,11 @@
 Host *
   HashKnownHosts no
 
+Host 172.17.2.*
+  User root
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+
 Host ariadne-term*
   User root
   StrictHostKeyChecking no
