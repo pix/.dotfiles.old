@@ -37,3 +37,9 @@
 [submodule "vim/vim/bundle/vim-known_hosts.git"]
 	path = vim/vim/bundle/vim-known_hosts.git
 	url = git://github.com/pix/vim-known_hosts.git
+[submodule "bin/auto-disper"]
+	path = bin/auto-disper
+	url = git://github.com/wertarbyte/auto-disper.git
+[submodule "bin/auto-disperd"]
+	path = bin/auto-disperd
+	url = git@github.com:pix/auto-disperd.git
