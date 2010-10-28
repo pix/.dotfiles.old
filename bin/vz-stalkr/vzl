@@ -17,7 +17,7 @@ vzlist -H -o veid,status,cpuunits,laverage,numproc,privvmpages,privvmpages.b,pri
     echo "$(vzgetname $ID) $ID $S $C $IP $(vzgethostname $ID) $L $NP $VM $VMB:$VML $D $DS:$DH"
 done 
 } |column -t
-
+echo
 echo "Total VE: $(vzlist -H |wc -l) running, $(vzlist -HS |wc -l) not running, $(vzlist -Ha |wc -l) total"
 
 RU=$(free -m |grep buffers/cache |awk '{print $3}')

@@ -1,4 +1,28 @@
 #!/bin/bash
 # Get container id by container name, if it's Hardware Node reply id 0
-[ "$(hostname -s)" == "$1" ] && echo 0 && exit
-grep -H 'NAME="'$1'"' /etc/vz/conf/*.conf | cut -d: -f1 | sed 's,/etc/vz/conf/\([0-9]*\)\.conf,\1,'
+[ "$(hostname -s)" == "$1" -o "$1" == "0" ] && echo 0 && exit
+[ -f /etc/vz/conf/$1.conf ] && echo $1 && exit
+
+# Get hostname configured in /etc/vz/conf/ctid.conf
+for i in /etc/vz/conf/*.conf; do
+       grep -H 'NAME="'$1'"' $i 2>&1 >/dev/null
+       R=$?
+
+       if [ $R -eq 0 ]; then
+               echo $i | sed 's,/etc/vz/conf/\([0-9]*\)\.conf,\1,'
+               exit 0
+       fi
+done
+
+# Get machine hostname configured in /etc/hostname
+for i in /var/lib/vz/private/*/etc/hostname; do
+       grep "^$1$" $i 2>&1 >/dev/null
+       R=$?
+
+       if [ $R -eq 0 ]; then
+               echo $i | sed 's,/var/lib/vz/private/\([0-9]*\)/etc/hostname,\1,'
+               exit 0
+       fi
+done
+
+exit 1
