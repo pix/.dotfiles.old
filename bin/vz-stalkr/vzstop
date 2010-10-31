@@ -1,3 +1,5 @@
 #!/bin/bash
 # Stop container by name
+vzishost || exit 1
+
 vzctl stop $(vzresolvename $1)

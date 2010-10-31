@@ -1,3 +1,5 @@
 #!/bin/bash
 # See all running processes on all containers
+vzishost || exit 1
+
 vzexecall ps fauxwww

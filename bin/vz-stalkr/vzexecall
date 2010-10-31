@@ -1,5 +1,7 @@
 #!/bin/bash
 # Execute command on all containers and show output
+vzishost || exit 1
+
 if [ $# -lt 1 ]; then
 	echo "Usage: $0 <command to run on all running VE>"
 	exit 0

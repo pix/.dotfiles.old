@@ -1,3 +1,5 @@
 #!/bin/bash
 # Get all containers ids
+vzishost || exit 1
+
 vzlist $@ |awk '$1 ~ "[0-9]+" {print $1}'

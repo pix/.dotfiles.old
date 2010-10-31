@@ -1,5 +1,6 @@
 #!/bin/bash
 # Nice output for vzlist: adds VE name, ip, hostname
+vzishost || exit 1
 
 {
 echo "NAME ID STATUS CPUUNITS IP HOSTNAME LOAD_AVERAGE PROC RAM BAR/LIM DISK SL/HL"
