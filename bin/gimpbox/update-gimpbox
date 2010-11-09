@@ -1,0 +1,2 @@
+#!/bin/bash
+wget http://gimpbox.googlecode.com/hg/gimpbox.py -O ~/.bin/gimpbox/gimpbox
