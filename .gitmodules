@@ -42,7 +42,7 @@
 	url = git://github.com/wertarbyte/auto-disper.git
 [submodule "bin/auto-disperd"]
 	path = bin/auto-disperd
-	url = git@github.com:pix/auto-disperd.git
+	url = git://github.com/pix/auto-disperd.git
 [submodule "vim/vim/bundle/git-rebase-helper"]
 	path = vim/vim/bundle/git-rebase-helper
 	url = git://github.com/pix/git-rebase-helper.git
