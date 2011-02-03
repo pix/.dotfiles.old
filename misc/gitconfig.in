@@ -39,6 +39,9 @@
 [apply]
 	whitespace = fix
 
+[branch]
+	autosetupmerge = true
+
 [sendemail]
 	smtpserver = SMTP_SERVER
 	smtpserverport = SMTP_PORT
