@@ -1,0 +1,36 @@
+#!/bin/zsh
+# vim: ft=zsh
+
+# Yes I know this is hacky stuff, I should pay for this tool
+#
+#
+ermine_pro() {
+    if [ -z "${TMP_MAGIC_ERMINE}" -o ! -z "${TMP_MAGIC_ERMINE}" ]; then
+        tmp_ermine=$(mktemp --suffix ErminePro)
+        echo "Downloading Magic Ermine Pro to ${tmp_ermine}"
+        wget -o /dev/null -O "${tmp_ermine}" \
+            'http://magicermine.com/trial/ErmineProTrial.i386/ErmineProTrial.i386/ErmineProTrial.i386'
+
+        if [ $? -ne 0 -o ! -f "${tmp_ermine}" ]; then
+            echo "Unable to download ermine_pro"
+            return 1
+        fi
+
+        chmod a+x "${tmp_ermine}"
+        export TMP_MAGIC_ERMINE="${tmp_ermine}"
+    else
+        echo "Reusing cached ${TMP_MAGIC_ERMINE}"
+    fi
+
+
+    SRC="${1}"
+    DST="${2}"
+
+    if [ -z "${DST}" ]; then
+        DST="${SRC}.static"
+    fi
+
+    echo "Statifying \"${SRC}\" to \"${DST}\""
+    $TMP_MAGIC_ERMINE "${SRC}" --output "${DST}"
+    echo "${DST}: " $(du -hs "${DST}" | awk '{print $1}')
+}
