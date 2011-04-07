@@ -1,40 +1,21 @@
-[color]
-	ui = auto 
-
-[color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
-
-[color "diff"]
-	meta = blue bold
-	frag = cyan 
-	old = magenta 
-	new = green 
-
-[color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
-
 [user]
-	name = USER_NAME
 	email = USER_MAIL
+	name = USER_NAME
 
 [alias]
-	l = log --graph --decorate --oneline
-	remotes = remote --verbose show
-	branches = branch --verbose -a
 	amend = commit --amend
-	st = status
-	co = checkout
-	ci = commit
 	br = branch
+	branches = branch --verbose -a
+	ci = commit
+	co = checkout
 	df = diff
+	l = log --graph --decorate --oneline
 	lg = log -p
-	up = pull --rebase
-	tar-gz = !sh -c 'prefix=$(basename $PWD) && ver=$1 && git archive --prefix=\"$prefix-$ver/\" HEAD | gzip > \"$prefix-$ver.tar.gz\"' -
 	ls-ignores = !sh -c 'grep -hv "^#" $(git ls-files | grep .gitignore) .git/info/exclude | sed s:/\\$::g | xargs -I"{}" echo --ignore=\"{}\"'
+	remotes = remote --verbose show
+	st = status
+	tar-gz = !sh -c 'prefix=$(basename $PWD) && ver=$1 && git archive --prefix=\"$prefix-$ver/\" HEAD | gzip > \"$prefix-$ver.tar.gz\"' -
+	up = pull --rebase
 
 [apply]
 	whitespace = fix
@@ -42,14 +23,54 @@
 [branch]
 	autosetupmerge = true
 
-[sendemail]
-	smtpserver = SMTP_SERVER
-	smtpserverport = SMTP_PORT
-	smtpencryption = SMTP_ENCRYPTION
-	smtpuser = SMTP_USERNAME
+[diff]
+	mnemonicprefix = true
+	renames = copies
+
+[diff "zip"]
+	textconv = unzip -c -a
+
+[diff "tgz"]
+	textconv = tar -ztvf
+
+[diff "tbz"]
+	textconv = tar -jtvf
+
+[merge]
+	stat = true
+
+[push]
+	default = tracking
 
 [rerere]
 	enabled = 1
 
+[sendemail]
+	smtpencryption = SMTP_ENCRYPTION
+	smtpserver = SMTP_SERVER
+	smtpserverport = SMTP_PORT
+	smtpuser = SMTP_USERNAME
+
 [url "git@github.com:GITHUB_USER/"]
 	pushInsteadOf = git://github.com/GITHUB_USER/
+
+
+#################################
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	frag = cyan
+	meta = blue bold
+	new = green
+	old = magenta
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[color]
+	ui = auto

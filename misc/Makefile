@@ -16,6 +16,7 @@ CONFIGS = \
 					tmux.conf \
 					gdbinit \
 					gitconfig \
+					gitattributes \
 					sqliterc \
 					wgetrc \
 					ackrc \
