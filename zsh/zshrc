@@ -63,6 +63,12 @@ autoload -U promptinit
 promptinit
 prompt walterscolor cyan blue
 
-for dir in $(find ~/.bin/ -type d); do
-    export PATH=$PATH:$dir
-done
+addpath() {
+    for dir in $(find "$1" -type d); do
+        export PATH=$PATH:$dir
+    done
+}
+[ -d ~/.bin/ ] && addpath ~/.bin || true
+[ -d ~/.bin-local/ ] && addpath ~/.bin-local || true
+
+
