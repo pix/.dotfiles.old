@@ -1,0 +1,90 @@
+#!/bin/bash -x
+
+tempdir=""
+
+log() {
+    echo "[+]" "$@"
+}
+
+error() {
+    echo "[*]" "$@"
+    exit 1
+}
+
+rmtempdir() {
+    if [ -n "$tempdir" -a -d "$tempdir" ]; then
+        log "Removing: $tempdir"
+        rm -fr "$tempdir"
+    fi
+}
+
+mktempdir() {
+    tempdir=${TMPDIR-/tmp}
+    tempdir=$tempdir/avr.$RANDOM.$$
+    log "tempdir is: $tempdir"
+    (umask 077 && mkdir $tempdir) || error "Unable to create tempdir"
+    [ -z $NORM ] && trap rmtempdir EXIT
+}
+
+echoquote() {
+    while [ -n "${1}" ]; do
+        echo '"'${1}'"'
+        shift 1
+    done
+}
+
+buildparams() {
+    if [ -f ~/.avr ]; then
+        cat < ~/.avr
+    fi
+
+    while [ -n "${1}" ]; do
+        case "${1}" in
+            -p|-c|-P)
+                echoquote "${1}" "${2}"
+                shift 2
+                ;;
+            *)
+                echoquote "${1}"
+                shift 1
+                ;;
+        esac
+    done
+}
+
+write() {
+    filename="$1"
+    shift 1
+
+    case "$filename" in
+        *.hex)
+            buildparams "$@" | xargs avrdude -U flash:w:"${filename}"
+            ;;
+        *.elf)
+            mktempdir
+            avr-objcopy -R .eeprom -R .fuse -R .signature -O ihex "${filename}" "${tempdir}/flash.hex"
+            avr-objcopy -j .eeprom --set-section-flags=.eeprom="alloc,load" --change-section-lma .eeprom=0 -O ihex "${filename}" "${tempdir}/eeprom.hex"
+            buildparams "$@" | xargs avrdude -U flash:w:"${tempdir}/flash.hex" -U eeprom:w:"${tempdir}/eeprom.hex" 
+            ;;
+    esac
+
+}
+
+
+usage() {
+    echo "usage: $0 write filename [avrdude args]"
+}
+
+# Make initial temp directory
+
+case "$1" in
+    write)
+        shift 1
+        write "$@"
+        ;;
+    *)
+        usage
+        exit 0
+esac
+
+
