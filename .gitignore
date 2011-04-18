@@ -8,6 +8,7 @@
 
 vim/vim/tmp
 vim/vim/tags/
+vim/vim/.netrwhist
 
 # bin/sshuttle is created by make install
 bin/sshuttle
