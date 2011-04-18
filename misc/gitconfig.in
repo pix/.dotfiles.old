@@ -42,6 +42,9 @@
 [push]
 	default = tracking
 
+[rebase]
+	stat = true
+
 [rerere]
 	enabled = 1
 
