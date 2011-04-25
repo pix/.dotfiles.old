@@ -64,7 +64,7 @@ promptinit
 prompt walterscolor cyan blue
 
 addpath() {
-    for dir in $(find "$1" -type d); do
+    for dir in $(find "$1"/ -maxdepth 2 -type d); do
         export PATH=$PATH:$dir
     done
 }
