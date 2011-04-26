@@ -1,23 +1,24 @@
-CONFIGS = \
+CONFIGS_SUB = \
 					misc \
 					zsh \
 					bash \
 					vim \
-					bin \
 					vendors
+
+CONFIG_DIR = \
+					bin \
+					sh-common
 
 
 default : all
 
-all : $(CONFIGS) git-setup
-
-install-dir-bin : bin
-	@echo
-	@echo "  [make]  Intalling user binaries"
-	@echo "  [ln]    Linking $< to ~/.$<"
-	@ln -sfT $(CURDIR)/bin $(HOME)/.bin
+all : $(CONFIGS_SUB) git-setup
 
 install-dir-% : %
+	@echo "  [ln]    Linking $< to ~/.$<"
+	@ln -sfT $(CURDIR)/$< $(HOME)/.$<
+
+install-subdir-% : %
 	@echo
 	@echo "  [make]  Entering $<"
 	@make --no-print-directory -C $* install 
@@ -31,5 +32,5 @@ $(HOME)/.history:
 	@echo "  [make]  Creating ~/.history"
 	@mkdir $(HOME)/.history 2>/dev/null
 
-install: git-setup $(foreach f, $(CONFIGS), install-dir-$(f) ) $(HOME)/.history
+install: git-setup $(foreach f, $(CONFIG_DIR), install-dir-$(f) ) $(foreach f, $(CONFIGS_SUB), install-subdir-$(f) ) $(HOME)/.history
 

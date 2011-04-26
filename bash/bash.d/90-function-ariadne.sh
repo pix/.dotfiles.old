@@ -1,1 +1,0 @@
-../../zsh/zsh/rc/90-function-ariadne.rc

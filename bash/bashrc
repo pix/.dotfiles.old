@@ -98,10 +98,13 @@ if [[ -x /usr/bin/ack-grep ]]; then
   alias ack='ack-grep'
 fi
 
+
+for file in $HOME/.sh-common/rc.init/*.rc; do
+    source $file
+done
+for file in $HOME/.sh-common/rc/*.rc; do
+  source $file
+done
 for _source in ~/.bash.d/*.sh; do
   source $_source
-done
-
-for dir in $(find ~/.bin/ -type d); do
-  export PATH=$PATH:$dir
 done

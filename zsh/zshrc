@@ -36,6 +36,12 @@ os=$(uname)
 [ -f "$HOME/.zsh/rc.os/${os}.zsh" ] && source "$HOME/.zsh/rc.os/${os}.zsh"
 
 # Global resource files
+for file in $HOME/.sh-common/rc.init/*.rc; do
+    source $file
+done
+for file in $HOME/.sh-common/rc/*.rc; do
+    source $file
+done
 for file in $HOME/.zsh/rc/*.{rc,zsh}; do
     source $file
 done
@@ -62,13 +68,5 @@ LISTMAX=0
 autoload -U promptinit
 promptinit
 prompt walterscolor cyan blue
-
-addpath() {
-    for dir in $(find "$1"/ -maxdepth 2 -type d); do
-        export PATH=$PATH:$dir
-    done
-}
-[ -d ~/.bin/ ] && addpath ~/.bin || true
-[ -d ~/.bin-local/ ] && addpath ~/.bin-local || true
 
 

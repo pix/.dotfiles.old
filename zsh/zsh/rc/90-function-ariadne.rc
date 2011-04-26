@@ -1,9 +1,0 @@
-########################################################################
-# Because I'm lazy
-# vi: ft=zsh
-#
-
-oecommit() 
-{ 
-  svn commit . -m "[oe] [$(basename $PWD)] $*"
-}

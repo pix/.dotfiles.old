@@ -1,0 +1,10 @@
+#!/bin/sh
+
+addpath() {
+    for dir in $(find "$1"/ -maxdepth 2 -type d); do
+        export PATH=$PATH:$dir
+    done
+}
+[ -d ~/.bin/ ] && addpath ~/.bin || true
+[ -d ~/.bin-local/ ] && addpath ~/.bin-local || true
+
