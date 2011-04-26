@@ -46,3 +46,6 @@
 [submodule "vim/vim/bundle/git-rebase-helper"]
 	path = vim/vim/bundle/git-rebase-helper
 	url = git://github.com/pix/git-rebase-helper.git
+[submodule "vim/vim/bundle/vim-indent-guides"]
+	path = vim/vim/bundle/vim-indent-guides
+	url = git://github.com/nathanaelkane/vim-indent-guides.git
