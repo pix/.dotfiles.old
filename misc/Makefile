@@ -21,7 +21,8 @@ CONFIGS = \
 					wgetrc \
 					ackrc \
 					ssh_config \
-					ctags
+					ctags \
+					terminfo
 
 include ../Makefile.rules
 

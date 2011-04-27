@@ -36,9 +36,6 @@ os=$(uname)
 [ -f "$HOME/.zsh/rc.os/${os}.zsh" ] && source "$HOME/.zsh/rc.os/${os}.zsh"
 
 # Global resource files
-for file in $HOME/.sh-common/rc.init/*.rc; do
-    source $file
-done
 for file in $HOME/.sh-common/rc/*.rc; do
     source $file
 done

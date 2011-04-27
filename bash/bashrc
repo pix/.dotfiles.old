@@ -99,9 +99,6 @@ if [[ -x /usr/bin/ack-grep ]]; then
 fi
 
 
-for file in $HOME/.sh-common/rc.init/*.rc; do
-    source $file
-done
 for file in $HOME/.sh-common/rc/*.rc; do
   source $file
 done
