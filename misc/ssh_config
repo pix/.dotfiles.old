@@ -1,7 +1,10 @@
 Host *
   HashKnownHosts no
 
+Host 172.17.1.*
 Host 172.17.2.*
+Host 172.17.3.*
+Host 172.17.4.*
   User root
   StrictHostKeyChecking no
   UserKnownHostsFile /dev/null
