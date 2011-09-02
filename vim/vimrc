@@ -174,12 +174,14 @@ let g:yankring_history_file = '.history/yankring'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Map C-Down and C-Up to move lines up/down
-nmap Ob <C-Down>
-nmap Oa <C-Up>
-imap Ob <C-Down>
-imap Oa <C-Up>
-vmap Ob <C-Down>
-vmap Oa <C-Up>
+map [A <C-Up>
+map [B <C-Down>
+map Oa <C-Up>
+map Ob <C-Down>
+map! [A <C-Up>
+map! [B <C-Down>
+map! Oa <C-Up>
+map! Ob <C-Down>
 nmap <C-Down> :m+<CR>==
 nmap <C-Up> :m-2<CR>==
 imap <C-Down> <Esc>:m+<CR>==gi
