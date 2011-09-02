@@ -1,7 +1,7 @@
 
 function! s:gotoline()
 	let file = bufname("%")
-	let names =  matchlist( file, '\(.*\):\(\d\+\)')
+	let names =  matchlist( file, '\(.\{-}\):\(\d\+\)\(:\(\d\+\)\)\?')
 
 	if len(names) != 0 && filereadable(names[1])
 		let l:bufn = bufnr("%")
