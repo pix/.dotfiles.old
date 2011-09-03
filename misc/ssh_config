@@ -19,3 +19,11 @@ Host cortex
 
 Host oe userspace rasalhague
   User cmoncelier
+
+Host vpn-greg
+  User root
+  Hostname viethome.guruz.org
+
+Host vpn2-greg
+  User root
+  Hostname 192.168.0.12
