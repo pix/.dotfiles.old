@@ -1,0 +1,18 @@
+#!/bin/sh
+
+export SUMTOOL="${1}"
+if [ ! -f "$(which ${SUMTOOL})" ]; then
+    export SUMTOOL="${SUMTOOL}sum"
+    if [ ! -f "$(which ${SUMTOOL})" ]; then
+       echo $0: $SUMTOOL not found
+       exit 1
+    fi
+fi
+shift 1
+
+echo "using: ${SUMTOOL} ($(which ${SUMTOOL}))"
+
+while [ -n "$1" ]; do
+    ${SUMTOOL} $1 > $1.${SUMTOOL}
+    shift 1
+done
