@@ -197,13 +197,21 @@ vmap <C-Up> :m-2<CR>gv=gv
 " Source a local configuration file if available.
 nmap Od <C-Left>
 nmap Oc <C-Right>
+nmap [D <C-Left>
+nmap [C <C-Right>
+
 imap Od <C-Left>
 imap Oc <C-Right>
+imap [D <C-Left>
+imap [C <C-Right>
+
 vmap Od <C-Left>
 vmap Oc <C-Right>
+vmap [D <C-Left>
+vmap [C <C-Right>
 
-map <C-Right> <C-]>
 map <C-Left> <C-T>
+map <C-Right> <C-]>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Get rid of this stupid default pink background 
