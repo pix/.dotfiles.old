@@ -1,4 +1,5 @@
 " Add bundles to the path
+"
 call pathogen#runtime_append_all_bundles()
 
 " File-type highlighting and configuration.
