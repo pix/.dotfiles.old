@@ -63,3 +63,7 @@ bindkey  "^F" edit-command-line
 
 # Push a command onto a stack allowing you to run another command first
 bindkey  "^J" push-line
+
+# Bind <ALT-k> to run-help (like vim's K for man)
+bindkey "^[K" run-help
+bindkey "^[k" run-help
