@@ -4,11 +4,16 @@ if which apt-get 2>&1 >/dev/null; then
     apt-get update
     apt-get install \
         zsh realpath tmux \
-        ncurses-term
+        ncurses-term \
         vim \
         git \
         ack-grep \
-        openssh-server
+        nethogs \
+        ncdu \
+        pv \
+        openssh-server \
+        moreutils \
+        binwalk
 
     case "$1" in
         dev)
