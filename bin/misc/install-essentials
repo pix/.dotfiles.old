@@ -12,8 +12,7 @@ if which apt-get 2>&1 >/dev/null; then
         ncdu \
         pv \
         openssh-server \
-        moreutils \
-        binwalk
+        moreutils
 
     case "$1" in
         dev)
