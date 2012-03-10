@@ -22,9 +22,11 @@ CONFIGS = \
 					ackrc \
 					ssh_config \
 					ctags \
-					terminfo
+					terminfo \
+					auth.bfa
 
 include ../Makefile.rules
+
 
 install-file-ssh_config:
 	@echo -n "  [ln]    Linking ssh_config to ~/.ssh/config"
