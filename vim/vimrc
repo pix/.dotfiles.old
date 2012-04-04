@@ -215,6 +215,12 @@ map <C-Left> <C-T>
 map <C-Right> <C-]>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Reselect visual block after indent/outdent
+" http://vimbits.com/bits/20
+vnoremap < <gv
+vnoremap > >gv
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Get rid of this stupid default pink background 
 highlight Pmenu ctermbg=0 ctermfg=5 
 highlight PmenuSel cterm=bold ctermbg=5 ctermfg=0 
