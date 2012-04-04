@@ -39,6 +39,13 @@
 [merge]
 	stat = true
 
+[notes]
+	rewriteRef = "refs/notes/*"
+
+[notes "rewrite"]
+	amend = true
+	rebase = true
+
 [push]
 	default = tracking
 
