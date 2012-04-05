@@ -47,10 +47,11 @@ zle -N self-insert url-quote-magic
 # wait 10 seconds before querying for a rm which contains a *
 setopt rmstarwait
 
-# GNU Colors
-[ -f ~/.dir_colors ] && eval $(dircolors -b ~/.dir_colors)
-export ZLSCOLORS="${LS_COLORS}"
-zmodload  zsh/complist
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31' 
-
+if (( $+commands[dircolors] )) ; then
+  # GNU Colors
+  [ -f ~/.dir_colors ] && eval $(dircolors -b ~/.dir_colors)
+  export ZLSCOLORS="${LS_COLORS}"
+  zmodload  zsh/complist
+  zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+  zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+fi
