@@ -305,6 +305,10 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" python-mode
+let g:pymode_lint_write = 0
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Source a local configuration file if available.
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
