@@ -151,6 +151,8 @@ yeahconsole*toggleKey: None+twosuperior
 yeahconsole*loginShell:True
 yeahconsole*consoleHeight: 60
 yeahconsole*screenWidth: 1440
+yeahconsole*xOffset: 0
+yeahconsole*yOffset: 27
 yeahconsole*tintColor: grey40
 yeahconsole*aniDelay:0
 yeahconsole*stepSize:100
