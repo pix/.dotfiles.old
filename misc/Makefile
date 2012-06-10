@@ -11,7 +11,7 @@ include ../Makefile.local
 endif
 
 CONFIGS = \
-					Xdefaults \
+					Xresources \
 					dir_colors \
 					tmux.conf \
 					gdbinit \

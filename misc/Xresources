@@ -129,7 +129,7 @@ yeahconsole*color15:	#b0b0b0
 !*color15: #e0e0e0
 
 ! urxvt settings
-! 
+!
 urxvt.scrollBar: false
 urxvt.reverseVideo: false
 urxvt.tintColor: grey40
@@ -152,7 +152,7 @@ yeahconsole*loginShell:True
 yeahconsole*consoleHeight: 60
 yeahconsole*screenWidth: 1440
 yeahconsole*tintColor: grey40
-yeahconsole*aniDelay:0 
+yeahconsole*aniDelay:0
 yeahconsole*stepSize:100
 yeahconsole*handleWidth:10
 yeahconsole*term:urxvt
