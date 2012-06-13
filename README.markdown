@@ -22,6 +22,7 @@ Information about dotfiles
   - [Doxygentoolkit]      : :Dox to generate doxygen comments
   - [trailing-whitespace] : :FixWhitespace
   - [vis]                 : C-v to highlight a block, then :B s/^pattern/newtext/g to replace inside the block
+  - [keepcase]            : %sSubstituteCase/\cleptonica/cvblob/g
 
 - tmux
   - Alt-F1 -> Alt-F12 : Selects corresponding windows
@@ -49,3 +50,4 @@ Information about dotfiles
 [doxygentoolkit]:      http://www.vim.org/scripts/script.php?script_id=987
 [trailing-whitespace]: http://www.vim.org/scripts/script.php?script_id=3201
 [vis]:                 http://mysite.verizon.net/astronaut/vim/index.html#VIS
+[keepcase]:            http://www.vim.org/scripts/script.php?script_id=6
