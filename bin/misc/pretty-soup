@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# vim: ts=4 sts=4 sw=4 et ai
+
+import sys
+import os
+
+from BeautifulSoup import BeautifulSoup
+
+if len(sys.argv) < 2:
+    print "usage: %s /path/to/htmlfile" % (sys.argv[0])
+    sys.exit(1)
+
+try:
+    soup = open(sys.argv[1], 'r').read()
+except:
+    print "Cannot open file: %s" % (sys.argv[1])
+    sys.exit(1)
+
+soup = BeautifulSoup(open(sys.argv[1], 'r').read())
+
+try:
+    toto = soup.prettify()
+except:
+    print 'Unable to prettify: %s' % (sys.argv[1])
+    sys.exit(1)
+
+with open(sys.argv[1], 'w') as f:
+    print 'Writing to %s' % (sys.argv[1])
+    f.write(toto)
+
+sys.exit(0)
