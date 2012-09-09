@@ -1,6 +1,19 @@
 " Add bundles to the path
-"
 call pathogen#runtime_append_all_bundles()
+
+if has("gui_running")
+  colorscheme ir_black
+else
+  colorscheme desert
+endif
+
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+endif
+
+if &t_Co == 256
+  colorscheme zenburn
+endif
 
 " File-type highlighting and configuration.
 " Run :filetype (without args) to see what you may have
@@ -149,12 +162,6 @@ endif
 " I HATE HATE HATE Mouse emulation
 set mouse-=a
 
-if has("gui_running")
-  colorscheme ir_black
-else
-  colorscheme desert
-endif
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Used for C and Hint man plugin
 autocmd FileType c,cpp set ch=2
@@ -230,6 +237,7 @@ highlight PmenuSbar ctermbg=5 ctermfg=0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " OmniCppComplete
 autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 let OmniCpp_DefaultNamespaces   = ["std", "_GLIBCXX_STD"]
 let OmniCpp_GlobalScopeSearch   = 1
@@ -256,7 +264,6 @@ let g:indent_guides_enable_on_vim_startup = 0
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Keep search matches in the middle of the window and pulse the line when
 " moving to them.
@@ -264,41 +271,8 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Status line ------------------------------------------------------------- {{{
+" Status line
 set laststatus=2
-augroup ft_statuslinecolor
-    au!
-
-    au InsertEnter * hi StatusLine ctermfg=196 guifg=#FF3145
-    au InsertLeave * hi StatusLine ctermfg=130 guifg=#CD5907
-augroup END
-
-set statusline=%f    " Path.
-set statusline+=%m   " Modified flag.
-set statusline+=%r   " Readonly flag.
-set statusline+=%w   " Preview window flag.
-
-set statusline+=\    " Space.
-
-set statusline+=%#redbar#                " Highlight the following as a warning.
-set statusline+=%{SyntasticStatuslineFlag()} " Syntastic errors.
-set statusline+=%*                           " Reset highlighting.
-
-set statusline+=%=   " Right align.
-
-" File format, encoding and type.  Ex: "(unix/utf-8/python)"
-set statusline+=(
-set statusline+=%{&ff}                        " Format (unix/DOS).
-set statusline+=/
-set statusline+=%{strlen(&fenc)?&fenc:&enc}   " Encoding (utf-8).
-set statusline+=/
-set statusline+=%{&ft}                        " Type (python).
-set statusline+=)
-
-" Line and column position and counts.
-set statusline+=\ (line\ %l\/%L,\ col\ %03c)
-
-" }}}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Highlight VCS conflict markers
