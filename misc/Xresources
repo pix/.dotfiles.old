@@ -137,7 +137,11 @@ urxvt.inheritPixmap: true
 urxvt.saveLines: 10000
 urxvt.cursorBlink: true
 urxvt.print-pipe: cat > $(TMPDIR=$HOME mktemp urxvt.XXXXX)
-urxvt.perl-ext-common:  default,matcher
+urxvt.perl-ext-common:  default,matcher,tabbed
+*tabbed.tabbar-fg: 4
+*tabbed.tabbar-bg: 0
+*tabbed.tab-fg:    0
+*tabbed.tab-bg:    4
 
 ! Vim
 Vim*useSchemes:	all
@@ -152,7 +156,6 @@ yeahconsole*loginShell:True
 yeahconsole*consoleHeight: 60
 yeahconsole*screenWidth: 1440
 yeahconsole*xOffset: 0
-yeahconsole*yOffset: 27
 yeahconsole*tintColor: grey40
 yeahconsole*aniDelay:0
 yeahconsole*stepSize:100
@@ -163,5 +166,6 @@ yeahconsole*reverseVideo: false
 yeahconsole*inheritPixmap: true
 yeahconsole*saveLines: 10000
 yeahconsole*cursorBlink: true
+yeahconsole*perl-ext-common:  default,matcher,tabbed
 
 *sessionMgt:false
