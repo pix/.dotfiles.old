@@ -6,6 +6,8 @@
 	amend = commit --amend
 	br = branch
 	branches = branch --verbose -a
+	b = blame -CCCw
+	wdiff = diff --word-diff
 	ci = commit
 	co = checkout
 	df = diff
