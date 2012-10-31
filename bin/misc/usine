@@ -1,0 +1,14 @@
+#!/bin/bash
+
+case "${1}" in
+	off)
+		sudo sed 's/^Acquire::http/# \0/g' -i /etc/apt/apt.conf.d/99usine
+		;;
+	on)
+		sudo sed 's/^# \(Acquire::http\)/\1/g' -i /etc/apt/apt.conf.d/99usine
+		;;
+	*)
+		echo "usage: $0 [on|off]"
+		exit 1
+		;;
+esac
