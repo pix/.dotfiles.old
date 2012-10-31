@@ -1,10 +1,19 @@
 #!/bin/sh
 
 addpath() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="$PATH:$1"
+    fi
+}
+recursive_addpath() {
     for dir in $(find "$1"/ -follow -maxdepth 2 -type d ! -name .git); do
-        export PATH=$PATH:$dir
+        addpath "$dir"
     done
 }
-[ -d ~/.bin/ ] && addpath ~/.bin || true
-[ -d ~/.bin-local/ ] && addpath ~/.bin-local || true
 
+[ -d ~/.bin/ ] && recursive_addpath ~/.bin
+[ -d ~/.bin-local/ ] && recursive_addpath ~/.bin-local
+
+addpath /sbin
+addpath /usr/sbin
+addpath ~/.rvm/bin # Add RVM to PATH for scripting

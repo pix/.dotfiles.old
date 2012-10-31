@@ -98,10 +98,10 @@ if [[ -x /usr/bin/ack-grep ]]; then
   alias ack='ack-grep'
 fi
 
-
 for file in $HOME/.sh-common/rc/*.rc; do
-  source $file
+  [ -f $file ] && source $file
 done
-for _source in ~/.bash.d/*.sh; do
-  source $_source
+
+for file in ~/.bash.d/*.sh; do
+  [ -f $file ] && source $file
 done
