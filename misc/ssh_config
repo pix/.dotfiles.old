@@ -1,26 +1,5 @@
 Host *
   HashKnownHosts no
 
-Host 172.17.1.* 172.17.2.* 172.17.3.* 172.17.4.*
-  User root
-  StrictHostKeyChecking no
-  UserKnownHostsFile /dev/null
-
-Host ariadne-term*
-  User root
-  StrictHostKeyChecking no
-  UserKnownHostsFile /dev/null
-
 Host cortex
   User pix
-
-Host oe oe-next userspace rasalhague
-  User cmoncelier
-
-Host vpn-greg
-  User root
-  Hostname viethome.guruz.org
-
-Host vpn2-greg
-  User root
-  Hostname 192.168.0.12
