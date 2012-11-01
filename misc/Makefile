@@ -13,6 +13,7 @@ endif
 CONFIGS = \
 					Xresources \
 					curlrc \
+					irbrc \
 					dir_colors \
 					tmux.conf \
 					gdbinit \
