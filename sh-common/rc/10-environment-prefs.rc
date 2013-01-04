@@ -6,28 +6,30 @@
 #
 export RLWRAP_HOME=~/.history
 
-which vim >/dev/null 2>/dev/null
-if [ $? -eq 0 ]; then 
+function __dot_is_installed() {
+	which "$1" >/dev/null 2>/dev/null
+}
+
+if __dot_is_installed vim; then
     export EDITOR=vim
     alias vi='vim'
 fi
 
 # ack is ack-grep on debian/ubuntu
-if which ack-grep >&/dev/null; then
+if __dot_is_installed ack-grep; then
     alias ack='ack-grep'
 fi
 
 # Goodbye more, lets play with most ##########################################
 #
-if which most >& /dev/null ; then
+if __dot_is_installed most; then
 	alias more='most'
 	alias less='most'
 	export PAGER='most'
 fi
 
-RUBY_1_8_GEMS=~/.gem/ruby/1.8/bin
-if [[ -d ${RUBY_1_8_GEMS} ]]; then
-    export PATH="${PATH}:${RUBY_1_8_GEMS}"
+if __dot_is_installed gem; then
+	export PATH=$PATH:$(gem env gempath | sed 's@\(:\|$\)@/bin\1@g')
 fi
 
 # GTK FTW !
