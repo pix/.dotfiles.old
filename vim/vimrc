@@ -137,8 +137,6 @@ map <silent> <C-v><C-v> :call BufferList()<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use DetectIndent plugin if available
-
 set tabstop=4
 set shiftwidth=4
 set autoindent smartindent
@@ -146,10 +144,6 @@ set expandtab
 
 autocmd FileType make     set noexpandtab
 autocmd FileType python   set noexpandtab
-autocmd BufReadPost * 
-            \ if exists(":DetectIndent") |
-            \   execute ":DetectIndent" |
-            \ endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Make some plugins stfu
@@ -278,6 +272,17 @@ set laststatus=2
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Nerdtree is my new friend
+map <silent> <C-c>c :NERDTreeToggle<CR>
+map <silent> <C-c><C-c> :NERDTreeToggle<CR>
+autocmd vimenter * if !argc() | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" A new take at CtrlP
+let g:ctrlp_map = '<c-f>'
+let g:ctrlp_cmd = 'CtrlP'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " python-mode
