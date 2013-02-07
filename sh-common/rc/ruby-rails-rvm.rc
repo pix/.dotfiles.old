@@ -1,0 +1,18 @@
+#!/bin/sh
+# vim:ft=sh
+
+# RVM
+export rvm_ignore_dotfiles=yes
+addpath $HOME/.rvm/bin # Add RVM to PATH for scripting
+[ -f ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
+
+# Bundle
+if ! __dot_is_installed b; then
+	if [[ -n "$ZSH_VERSION" ]]; then
+		alias -g b='bundle'
+		alias -g be='bundle exec'
+	else
+		alias    b='bundle'
+		alias    be='bundle exec'
+	fi
+fi
