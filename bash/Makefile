@@ -1,6 +1,7 @@
 CONFIGS = \
-					bashrc \
-					bash.d
+		  bash_profile \
+		  bashrc \
+		  bash.d
 
 include ../Makefile.rules
 

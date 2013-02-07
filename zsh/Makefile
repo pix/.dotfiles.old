@@ -1,9 +1,10 @@
 CONFIGS = \
-					zshrc \
-					zsh
+		  zprofile \
+		  zshrc \
+		  zsh
 
 OLD_CONFIGS = \
-			 		zsh.d
+			  zsh.d
 
 include ../Makefile.rules
 
