@@ -11,6 +11,7 @@ include ../Makefile.local
 endif
 
 CONFIGS = \
+					autojump \
 					Xresources \
 					curlrc \
 					irbrc \

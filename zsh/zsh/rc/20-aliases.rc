@@ -10,8 +10,6 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
 alias :wq='exit'
-alias h='history'
-alias j='jobs -l'
 
 alias ..='cd ..'
 alias cd..="cd .."
