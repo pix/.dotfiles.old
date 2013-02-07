@@ -289,6 +289,20 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:pymode_lint_write = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Fix vim closetag
+if !exists("b:unaryTagsStack") || exists("b:closetag_html_style")
+    if &filetype == "html" || exists("b:closetag_html_style")
+        let b:unaryTagsStacktack="area base br dd dt hr img input link meta param"
+    else " for xml and xsl
+        let b:unaryTagsStack=""
+    endif
+endif
+
+if !exists("b:unaryTagsStack")
+    let b:unaryTagsStack=""
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Source a local configuration file if available.
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
