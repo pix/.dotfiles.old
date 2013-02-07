@@ -36,10 +36,10 @@ os=$(uname)
 [ -f "$HOME/.zsh/rc.os/${os}.zsh" ] && source "$HOME/.zsh/rc.os/${os}.zsh"
 
 # Global resource files
-for file in $HOME/.sh-common/rc/*.rc; do
+for file in $HOME/.sh-common/rc{,.local}/*.rc(N); do
     source $file
 done
-for file in $HOME/.zsh/rc/*.{rc,zsh}; do
+for file in $HOME/.zsh/rc/*.{rc,zsh}(N); do
     source $file
 done
 
