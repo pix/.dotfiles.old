@@ -68,8 +68,12 @@ set scrolloff=3
 " single directory: 
 set backupdir=~/.vim/tmp,~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim/tmp,~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set undodir=~/.vim/tmp/undo,~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set undodir=~/.vim/tmp/undo,~/.vim/tmp,~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set backup undofile
+
+" Be smart, Private files are private for a reason, do not spread bits of them
+" everywhere
+autocmd BufRead,BufNewFile ~/Private/* set backupdir=~/Private/.tmp|set directory=~/Private/.tmp|set undodir=~/Private/.tmp
 
 " Intuitive backspacing in insert mode
 set backspace=indent,eol,start
