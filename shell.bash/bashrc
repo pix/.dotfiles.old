@@ -94,19 +94,11 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-if [[ -x /usr/bin/ack-grep ]]; then
-  alias ack='ack-grep'
-fi
-
 shopt -q nullglob
 __ngs=$?
 shopt -s nullglob
-for file in $HOME/.sh-common/rc{,.local}/*.rc; do
+for file in $HOME/.{shell.d,bash.d}/rc{,.local}/*.rc; do
   [ -f $file ] && source $file
 done
 [ "$__ngs" -eq 1 ] && shopt -u nullglob
 unset __ngs
-
-for file in ~/.bash.d/*.sh; do
-  [ -f $file ] && source $file
-done

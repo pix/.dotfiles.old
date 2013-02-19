@@ -1,0 +1,33 @@
+#!/bin/sh
+
+addpath() {
+    prepend=0
+    if [[ "$1" == "--prepend" ]]; then
+        prepend=1
+        shift 1
+    fi
+    if [[ -d "$1" ]] && [[ ":$PATH:" != *":$1:"* ]]; then
+        if [[ "${prepend}" -eq 0 ]]; then
+            PATH="$PATH:$1"
+        else
+            PATH="$1:$PATH"
+        fi
+    fi
+}
+recursive_addpath() {
+    prepend=""
+    if [[ "$1" = "--prepend" ]]; then
+        prepend="--prepend"
+        shift 1
+    fi
+    for dir in $(find "$1"/ -follow -maxdepth 2 -type d ! -name .git); do
+        addpath $prepend "$dir"
+    done
+}
+
+[ -d ~/.bin/ ] && recursive_addpath --prepend ~/.bin
+[ -d ~/.bin-local/ ] && recursive_addpath --prepend ~/.bin-local
+
+addpath /sbin
+addpath /usr/sbin
+addpath ~/.rvm/bin # Add RVM to PATH for scripting

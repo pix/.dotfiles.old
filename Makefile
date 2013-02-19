@@ -1,13 +1,13 @@
 CONFIGS_SUB = \
 					misc \
-					zsh \
-					bash \
 					vim \
+					shell.zsh \
+					shell.bash \
 					vendors
 
 CONFIG_DIR = \
-					bin \
-					sh-common
+                    shell.d \
+					bin
 
 
 default : all

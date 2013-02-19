@@ -1,0 +1,5 @@
+ADT_BUNDLE_ROOT="$HOME/Devel/Android/sdk/adt-bundle"
+export ANDROID_HOME="$ADT_BUNDLE_ROOT/sdk"
+for i in "eclipse" "sdk/platform-tools/"; do
+    [ -d "${ADT_BUNDLE_ROOT}/${i}" ] && addpath "${ADT_BUNDLE_ROOT}/${i}"
+done
