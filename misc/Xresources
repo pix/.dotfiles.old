@@ -44,112 +44,41 @@ yeahconsole*color7:		#808080
 urxvt*color15:			#b0b0b0
 yeahconsole*color15:	#b0b0b0
 
-!! Daisuke
-!*background: #000000
-!*foreground: #dcdccc
-!! black
-!*color0: #1e1e1e
-!*color8: #505050
-!! red
-!*color1: #b04020
-!*color9: #dd4010
-!! green
-!*color2: #afd700
-!*color10: #daff30
-!! yellow
-!*color3: #f7cf0a
-!*color11: #fce70d
-!! blue
-!*color4: #3060aa
-!*color12: #6099dd
-!! magenta
-!*color5: #d6156c
-!*color13: #fe4365
-!! cyan
-!*color6: #a0c2de
-!*color14: #c9dee8
-!! white
-!*color7: #808080
-!*color15: #b0b0b0
-
-!! MrElendig
-!*background: #000000
-!*foreground: #dcdccc
-!! black
-!*color0: #000000
-!*color8: #9999AA
-!! red
-!*color1: #DE1923
-!*color9: #FF6050
-!! green
-!*color2: #559933
-!*color10: #66D077
-!! yellow
-!*color3: #FF9922
-!*color11: #FFFFAF
-!! blue
-!*color4: #3579A8
-!*color12: #4EB4FA
-!! magenta
-!*color5: #BB88DD
-!*color13: #D7AFD7
-!! cyan
-!*color6: #00BBDD
-!*color14: #0DEBFF
-!! white
-!*color7: #C7C7C7
-!*color15: #D9D9D9
-
-!! Gigamo
-!*background: #000000
-!*foreground: #dcdccc
-!! Black
-!*color0: #1e1e1e
-!*color8: #555753
-!! Red
-!*color1: #CC0000
-!*color9: #EF2929
-!! Green
-!*color2: #4E9A06
-!*color10: #8AE234
-!! Yellow
-!*color3: #C4A000
-!*color11: #FCE94F
-!! Blue
-!*color4: #3465A4
-!*color12: #729FCF
-!! Purple
-!*color5: #75507B
-!*color13: #AD7FA8
-!! Cyan
-!*color6: rgb:06/98/9A
-!*color14: #34E2E2
-!! White
-!*color7: #9f9f9f
-!*color15: #e0e0e0
-
 ! urxvt settings
 !
-urxvt.scrollBar: false
-urxvt.reverseVideo: false
-urxvt.tintColor: grey40
-urxvt.inheritPixmap: true
-urxvt.saveLines: 10000
-urxvt.cursorBlink: true
-urxvt.print-pipe: cat > $(TMPDIR=$HOME mktemp urxvt.XXXXX)
+urxvt*scrollBar: false
+yeahconsole*scrollBar: false
+urxvt*reverseVideo: false
+yeahconsole*reverseVideo: false
+urxvt*tintColor: grey40
+yeahconsole*tintColor: grey40
+urxvt*inheritPixmap: true
+yeahconsole*inheritPixmap: true
+urxvt*saveLines: 10000
+yeahconsole*saveLines: 10000
+urxvt*cursorBlink: true
+yeahconsole*cursorBlink: true
+urxvt*print-pipe: cat > $(TMPDIR=$HOME mktemp urxvt.XXXXX)
+yeahconsole*print-pipe: cat > $(TMPDIR=$HOME mktemp urxvt.XXXXX)
 urxvt.perl-ext-common:  default,matcher,tabbed
-*tabbed.tabbar-fg: 4
-*tabbed.tabbar-bg: 0
-*tabbed.tab-fg:    0
-*tabbed.tab-bg:    4
+yeahconsole*perl-ext-common:  default,matcher,tabbed
+
+urxvt*tabbed.tabbar-fg:       4
+yeahconsole*tabbed.tabbar-fg: 4
+urxvt*tabbed.tabbar-bg:       0
+yeahconsole*tabbed.tabbar-bg: 0
+urxvt*tabbed.tab-bg:          4
+yeahconsole*tabbed.tab-bg:    4
+urxvt*tabbed.tab-fg:          0
+yeahconsole*tabbed.tab-fg:    0
 
 ! Vim
-Vim*useSchemes:	all
-Vim*sgiMode:	true
-Vim.foreground:	lightyellow2
-Vim*background:	Black
-Vim.useEnhancedFSB:	true
-Vim.geometry:	88x40
+Vim*useSchemes:	      all
+Vim*sgiMode:	      true
+Vim.foreground:	      lightyellow2
+Vim*background:	      Black
+Vim.useEnhancedFSB:	  true
+Vim.geometry:	      88x40
 
 yeahconsole*toggleKey: None+twosuperior
 yeahconsole*loginShell:True
@@ -157,16 +86,9 @@ yeahconsole*consoleHeight: 60
 yeahconsole*screenWidth: 1600
 yeahconsole*xOffset: 0
 yeahconsole*yOffset: 24
-yeahconsole*tintColor: grey40
 yeahconsole*aniDelay:0
 yeahconsole*stepSize:100
 yeahconsole*handleWidth:10
 yeahconsole*term:urxvt
-yeahconsole*scrollBar: false
-yeahconsole*reverseVideo: false
-yeahconsole*inheritPixmap: true
-yeahconsole*saveLines: 10000
-yeahconsole*cursorBlink: true
-yeahconsole*perl-ext-common:  default,matcher,tabbed
 
 *sessionMgt:false
