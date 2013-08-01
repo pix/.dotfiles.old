@@ -125,20 +125,6 @@ nmap <F2> :call Sudowq()<CR><Enter>
 " In zsh: bindkey "^F" edit-command-line, just colorize the tmp file
 autocmd BufReadPost /tmp/zshecl* set filetype=zsh
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ctags functions
-let Tlist_Shutup = 1
-let Tlist_WinWidth = 50
-map <F3> :TlistToggle<cr>
-map <esc><F3> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-" custom tags repository
-set tags+=~/.vim/tags/**
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" bufferlist plugin
-map <silent> <C-v>v :call BufferList()<CR>
-map <silent> <C-v><C-v> :call BufferList()<CR>
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set tabstop=4
@@ -178,10 +164,6 @@ let g:syntastic_mode_map = { 'mode': 'active',
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " A.vim
 let g:alternateNoDefaultAlternate = 1 " Do not alternate if not found
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" YankRing
-let g:yankring_history_file = '.history/yankring'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Map C-Down and C-Up to move lines up/down
@@ -277,20 +259,61 @@ set laststatus=2
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Nerdtree is my new friend
-map <silent> <C-c>c :NERDTreeToggle<CR>
-map <silent> <C-c><C-c> :NERDTreeToggle<CR>
-autocmd vimenter * if !argc() | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" Unite all the things
+let g:unite_source_history_yank_enable = 1
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+
+map <silent> <C-x><C-x> :<C-u>Unite -start-insert file_rec/async buffer<cr>
+map <silent> <C-x>x     :<C-u>Unite -start-insert file_rec/async buffer history/yank<cr>
+
+map <silent> <C-v><C-v> :<C-u>Unite buffer<cr>
+map <silent> <C-v>v     :<C-u>Unite buffer<cr>
+
+map <silent> <C-c><C-c> :<C-u>Unite -vertical file buffer<cr>
+map <silent> <C-c>c     :<C-u>Unite -vertical file buffer<cr>
+
+map <silent> <C-w><C-w> :<C-u>Unite -start-insert tag<cr>
+map <silent> <C-w>w     :<C-u>UniteWithCursorWord tag<cr>
+
+"autocmd vimenter * if !argc() | Unite -vertical -winwidth=40 file | endif
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Custom mappings for the unite buffer
+autocmd FileType unite call s:unite_settings()
+function! s:unite_settings()
+  " Play nice with supertab
+  let b:SuperTabDisabled=1
+  " Enable navigation with control-j and control-k in insert mode
+  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
+  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
+  map  <buffer> <C-w>   <Esc>:q!<CR>
+endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" A new take at CtrlP
-let g:ctrlp_map = '<c-f>'
-let g:ctrlp_cmd = 'CtrlP'
+" neocomplcache settings
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" VimTags options
+let g:easytags_file = '~/.vim/tags'
+set tags=./.tags;,~/.vim/tags
+map <F3> :UpdateTags<CR>
+map <F4> :execute 'silent !/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .' <Bar> redraw! <Bar> HighlightTags<CR>
+" custom tags repository
+set tags+=~/.vim/tags/**
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " python-mode
 let g:pymode_lint_write = 0
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-addon-local-vimrc
+let g:local_vimrc = {'names':['.vimrc.project'],'hash_fun':'LVRHashOfFile'}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fix vim closetag

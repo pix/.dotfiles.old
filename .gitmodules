@@ -58,9 +58,6 @@
 [submodule "vim/vim/bundle/snipmate-snippets"]
 	path = vim/vim/bundle/snipmate-snippets
 	url = git://github.com/honza/snipmate-snippets.git
-[submodule "vim/vim/bundle/vim-powerline"]
-	path = vim/vim/bundle/vim-powerline
-	url = git://github.com/Lokaltog/vim-powerline.git
 [submodule "vim/vim/bundle/zencoding-vim"]
 	path = vim/vim/bundle/zencoding-vim
 	url = git://github.com/mattn/zencoding-vim.git
@@ -91,3 +88,30 @@
 [submodule "vim/vim/bundle/vim-snippets"]
 	path = vim/vim/bundle/vim-snippets
 	url = git://github.com/honza/vim-snippets.git
+[submodule "vim/vim/bundle/unite.vim"]
+	path = vim/vim/bundle/unite.vim
+	url = git://github.com/Shougo/unite.vim
+[submodule "vim/vim/bundle/vimproc.vim"]
+	path = vim/vim/bundle/vimproc.vim
+	url = git://github.com/Shougo/vimproc.vim
+[submodule "vim/vim/bundle/unite-tag"]
+	path = vim/vim/bundle/unite-tag
+	url = git://github.com/tsukkee/unite-tag.git
+[submodule "vim/vim/bundle/vim-easytags"]
+	path = vim/vim/bundle/vim-easytags
+	url = git://github.com/xolox/vim-easytags.git
+[submodule "vim/vim/bundle/vim-misc"]
+	path = vim/vim/bundle/vim-misc
+	url = git://github.com/xolox/vim-misc.git
+[submodule "vim/vim/bundle/neocomplcache.vim"]
+	path = vim/vim/bundle/neocomplcache.vim
+	url = git://github.com/Shougo/neocomplcache.vim
+[submodule "vim/vim/bundle/vim-airline"]
+	path = vim/vim/bundle/vim-airline
+	url = git://github.com/bling/vim-airline
+[submodule "vim/vim/bundle/vim-fugitive"]
+	path = vim/vim/bundle/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive
+[submodule "vim/vim/bundle/vim-addon-local-vimrc"]
+	path = vim/vim/bundle/vim-addon-local-vimrc
+	url = git://github.com/MarcWeber/vim-addon-local-vimrc.git
