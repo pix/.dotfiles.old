@@ -115,3 +115,9 @@
 [submodule "vim/vim/bundle/vim-addon-local-vimrc"]
 	path = vim/vim/bundle/vim-addon-local-vimrc
 	url = git://github.com/MarcWeber/vim-addon-local-vimrc.git
+[submodule "shell.zsh/zsh/liquidprompt"]
+	path = shell.zsh/zsh/liquidprompt
+	url = https://github.com/nojhan/liquidprompt.git
+[submodule "vim/vim/bundle/emmet-vim"]
+	path = vim/vim/bundle/emmet-vim
+	url = https://github.com/mattn/emmet-vim.git
