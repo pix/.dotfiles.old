@@ -26,7 +26,8 @@ CONFIGS = \
 					ssh_config \
 					ctags \
 					terminfo \
-					auth.bfa
+					auth.bfa \
+					profile
 
 include ../Makefile.rules
 
