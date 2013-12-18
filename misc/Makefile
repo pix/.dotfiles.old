@@ -27,7 +27,8 @@ CONFIGS = \
 					ctags \
 					terminfo \
 					auth.bfa \
-					profile
+					profile \
+					inputrc
 
 include ../Makefile.rules
 

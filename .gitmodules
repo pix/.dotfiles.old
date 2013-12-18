@@ -64,15 +64,9 @@
 [submodule "vim/vim/bundle/closetag.vim"]
 	path = vim/vim/bundle/closetag.vim
 	url = git://github.com/vim-scripts/closetag.vim.git
-[submodule "vim/vim/bundle/autoclose"]
-	path = vim/vim/bundle/autoclose
-	url = git://github.com/vim-scripts/AutoClose.git
 [submodule "vim/vim/bundle/xmledit"]
 	path = vim/vim/bundle/xmledit
 	url = git://github.com/sukima/xmledit.git
-[submodule "vim/vim/bundle/vim-sleuth"]
-	path = vim/vim/bundle/vim-sleuth
-	url = git://github.com/tpope/vim-sleuth.git
 [submodule "vim/vim/bundle/vim-nerdtree-tabs"]
 	path = vim/vim/bundle/vim-nerdtree-tabs
 	url = https://github.com/jistr/vim-nerdtree-tabs.git

@@ -72,6 +72,15 @@ yeahconsole*tabbed.tab-bg:    4
 urxvt*tabbed.tab-fg:          0
 yeahconsole*tabbed.tab-fg:    0
 
+*keysym.Control-Up:   \033[1;5A
+*keysym.Control-Down:    \033[1;5B
+*keysym.Control-Left:    \033[1;5D
+*keysym.Control-Right:    \033[1;5C
+*keysym.M-Down:        \033[1;3B
+*keysym.M-Up:          \033[1;3A
+*keysym.M-Left:        \033[1;3D
+*keysym.M-Right:       \033[1;3C
+
 ! Vim
 Vim*useSchemes:	      all
 Vim*sgiMode:	      true

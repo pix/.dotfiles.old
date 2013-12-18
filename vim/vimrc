@@ -83,6 +83,23 @@ set backspace=indent,eol,start
 set hlsearch
 set incsearch " ...dynamically as they are typed.
 
+" Blink highlighted search results
+" This rewires n and N to do the highlighing...
+nnoremap <silent> n   n:call HLNext(0.1)<cr>zzzv
+nnoremap <silent> N   N:call HLNext(0.1)<cr>zzzv
+function! HLNext (blinktime)
+  highlight WhiteOnRed ctermbg=red ctermfg=white
+  let [bufnum, lnum, col, off] = getpos('.')
+  let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+  let target_pat = '\c\%#'.@/
+  let ring = matchadd('WhiteOnRed', target_pat, 101)
+  redraw
+  exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+  call matchdelete(ring)
+  redraw
+endfunction
+
+
 " The “Press ENTER or type command to continue” prompt is jarring and usually
 " unnecessary. You can shorten command-line text and other info tokens with,
 set shortmess=atI
@@ -165,22 +182,21 @@ let g:syntastic_mode_map = { 'mode': 'active',
 " A.vim
 let g:alternateNoDefaultAlternate = 1 " Do not alternate if not found
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Map C-Down and C-Up to move lines up/down
-map [A <C-Up>
-map [B <C-Down>
-map Oa <C-Up>
-map Ob <C-Down>
-map! [A <C-Up>
-map! [B <C-Down>
-map! Oa <C-Up>
-map! Ob <C-Down>
+" Map C-Down and C-Up to move lines up/down, M-{Up,Right,Down,Left} for blocks
 nmap <C-Down> :m+<CR>==
 nmap <C-Up> :m-2<CR>==
 imap <C-Down> <Esc>:m+<CR>==gi
 imap <C-Up> <Esc>:m-2<CR>==gi
-vmap <C-Down> :m'>+<CR>gv=gv
-vmap <C-Up> :m-2<CR>gv=gv
+
+vmap <expr> <M-Left>  DVB_Drag('left')
+vmap <expr> <M-Right> DVB_Drag('right')
+vmap <expr> <M-Down>  DVB_Drag('down')
+vmap <expr> <M-Up>    DVB_Drag('up')
+vmap <expr> D         DVB_Duplicate()
+
+set virtualedit=block
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Source a local configuration file if available.
@@ -201,6 +217,9 @@ vmap [C <C-Right>
 
 map <C-Left> <C-T>
 map <C-Right> <C-]>
+
+" Use space to jump down a page (like browsers do)...
+nnoremap <Space> <PageDown>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Reselect visual block after indent/outdent
@@ -245,10 +264,18 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Keep search matches in the middle of the window and pulse the line when
-" moving to them.
-nnoremap n nzzzv
-nnoremap N Nzzzv
+" Make tabs, trailing whitespace, and non-breaking spaces visible ]======
+exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
+augroup VisibleNaughtiness
+    autocmd!
+    autocmd BufEnter  *       set list
+    autocmd BufEnter  *.txt   set nolist
+    autocmd BufEnter  *.vp*   set nolist
+    autocmd BufEnter  *       if !&modifiable
+    autocmd BufEnter  *           set nolist
+    autocmd BufEnter  *       endif
+augroup END
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Status line
@@ -288,6 +315,15 @@ function! s:unite_settings()
   imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
   map  <buffer> <C-w>   <Esc>:q!<CR>
 endfunction
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Nerdcommenter shortcuts
+vmap // <leader>cigv
+nmap // <leader>cigv
+let g:NERDSpaceDelims = 1
+let g:NERDRemoveExtraSpaces = 1
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " neocomplcache settings
