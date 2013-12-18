@@ -28,7 +28,8 @@ CONFIGS = \
 					terminfo \
 					auth.bfa \
 					profile \
-					inputrc
+					inputrc \
+					npmrc
 
 include ../Makefile.rules
 

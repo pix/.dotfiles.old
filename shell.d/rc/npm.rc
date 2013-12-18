@@ -1,0 +1,3 @@
+if [ -d ~/.npm-packages/bin/ ]; then
+    addpath ~/.npm-packages/bin
+fi
