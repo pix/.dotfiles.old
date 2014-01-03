@@ -10,7 +10,7 @@ vim/vim/tags/
 vim/vim/.netrwhist
 
 # Local files
-sh-common/rc.local
+shell.d/rc.local
 
 # bin/sshuttle is created by make install
 bin/sshuttle
