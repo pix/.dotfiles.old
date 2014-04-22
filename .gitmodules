@@ -127,3 +127,9 @@
 [submodule "vim/vim/bundle/yankring.vim"]
 	path = vim/vim/bundle/yankring.vim
 	url = git://github.com/vim-scripts/YankRing.vim.git
+[submodule "vim/vim/bundle/vim-instant-markdown"]
+	path = vim/vim/bundle/vim-instant-markdown
+	url = git://github.com/suan/vim-instant-markdown
+[submodule "vim/vim/bundle/vim-markdown"]
+	path = vim/vim/bundle/vim-markdown
+	url = git://github.com/tpope/vim-markdown
