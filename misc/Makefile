@@ -29,6 +29,7 @@ CONFIGS = \
 					auth.bfa \
 					profile \
 					inputrc \
+					urxvt \
 					npmrc
 
 include ../Makefile.rules
