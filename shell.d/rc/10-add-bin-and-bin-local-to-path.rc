@@ -1,28 +1,39 @@
 #!/bin/sh
 
 addpath() {
-    prepend=0
-    if [[ "$1" == "--prepend" ]]; then
-        prepend=1
-        shift 1
-    fi
-    if [[ -d "$1" ]] && [[ ":$PATH:" != *":$1:"* ]]; then
-        if [[ "${prepend}" -eq 0 ]]; then
-            PATH="$PATH:$1"
+    local _prepend cur_path
+    _prepend=0
+    case "${1}" in
+        "--prepend")
+            _prepend=1
+            shift
+            ;;
+    esac
+    cur_path="${1}"
+    if [[ -d "$cur_path" ]] && [[ ":$PATH:" != *":$cur_path:"* ]]; then
+        if [[ "$_prepend" -eq 0 ]]; then
+            PATH="$PATH:$cur_path"
         else
-            PATH="$1:$PATH"
+            PATH="$cur_path:$PATH"
         fi
     fi
 }
+
 recursive_addpath() {
-    prepend=""
-    if [[ "$1" = "--prepend" ]]; then
-        prepend="--prepend"
-        shift 1
-    fi
+    local prepend dir
+    case "$1" in
+        "--prepend")
+            prepend=${1}
+            shift
+            ;;
+    esac
     for dir in $(find "$1"/ -follow -maxdepth 2 -type d ! -name .git); do
         addpath $prepend "$dir"
     done
+}
+
+show_path() {
+    echo $PATH | sed 's/:/\n/g'
 }
 
 [ -d ~/.bin/ ] && recursive_addpath --prepend ~/.bin
