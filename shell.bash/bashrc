@@ -102,3 +102,5 @@ for file in $HOME/.{shell.d,bash.d}/rc{,.local}/*.rc; do
 done
 [ "$__ngs" -eq 1 ] && shopt -u nullglob
 unset __ngs
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

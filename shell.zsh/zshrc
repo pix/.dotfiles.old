@@ -57,3 +57,5 @@ LISTMAX=0
 autoload -U promptinit
 promptinit
 prompt walterscolor cyan blue
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

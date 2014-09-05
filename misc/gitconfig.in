@@ -9,7 +9,6 @@
 	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
 	ours   = "!f() { git checkout --ours $@ && git add $@; }; f"
 	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
-
 	amend = commit --amend
 	br = branch
 	branches = branch --verbose -a
@@ -27,6 +26,9 @@
 	in = !git fetch && git log --pretty=oneline --abbrev-commit --graph @{u}..
 	mkarchive = "!f() { type=\"${1-zip}\"; prefix=\"${2-$(basename $PWD | sed -e s/\\.git$//g -e s/^\\.//g)}\"; version=\"${3-$(git describe --always --tags --dirty)}\"; git archive --prefix=\"${prefix}-${version}/\" HEAD -o \"${prefix}-${version}.${type}\"; }; f"
 	up = pull --rebase
+	fixme = grep --break --heading -n 'FIXME\\|TODO'
+	gg = grep --break --heading -n
+
 
 [apply]
 	whitespace = fix

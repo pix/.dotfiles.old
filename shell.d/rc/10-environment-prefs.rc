@@ -28,10 +28,6 @@ if __dot_is_installed most; then
 	export PAGER='most'
 fi
 
-if __dot_is_installed gem; then
-	export PATH=$PATH:$(gem env gempath | sed 's@\(:\|$\)@/bin\1@g')
-fi
-
 # GTK FTW !
 export OOO_FORCE_DESKTOP=gnome
 # XFT my friend

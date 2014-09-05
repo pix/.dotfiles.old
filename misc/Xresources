@@ -51,6 +51,8 @@ URxvt*tabbed.tab-fg                    : 0
 URxvt*tabbed.tabbar-bg                 : 0
 URxvt*tabbed.tabbar-fg                 : 4
 URxvt*tintColor                        : grey40
+URxvt*transpartent:                    : true
+URxvt*shading                          : 70
 
 *keysym.M-Down            : \033[1;3B
 *keysym.M-Up              : \033[1;3A

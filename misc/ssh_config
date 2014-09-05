@@ -1,5 +1,9 @@
 Host *
   HashKnownHosts no
 
+Host *.git.homadeus.com
+  User git
+  IdentityFile ~/.ssh/team-homadeus
+
 Host cortex
   User pix
