@@ -133,3 +133,6 @@
 [submodule "vim/vim/bundle/vim-markdown"]
 	path = vim/vim/bundle/vim-markdown
 	url = git://github.com/tpope/vim-markdown
+[submodule "vim/vim/bundle/vim-haml"]
+	path = vim/vim/bundle/vim-haml
+	url = git://github.com/tpope/vim-haml
