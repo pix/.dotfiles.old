@@ -136,3 +136,6 @@
 [submodule "vim/vim/bundle/vim-haml"]
 	path = vim/vim/bundle/vim-haml
 	url = git://github.com/tpope/vim-haml
+[submodule "vim/vim/bundle/vim-plugin-autosess"]
+	path = vim/vim/bundle/vim-plugin-autosess
+	url = git://github.com/pix/vim-plugin-autosess
