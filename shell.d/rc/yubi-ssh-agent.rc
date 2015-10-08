@@ -1,0 +1,23 @@
+enable-gpg-ssh() {
+    # killall gpg-agent
+    if pgrep gpg-agent -u $USER >/dev/null; then
+        echo -n "Kill running agent ? (y/N) "
+        read kill
+        if [[ "$kill" == "y" ]]; then
+            pkill -u $USER gpg-agent
+        fi
+    fi
+
+    # Configure GPG to use its agent (only for smartcard):
+    # $ echo "use-agent" >> ~/.gnupg/gpg.conf
+    # Enable ssh-agent drop in replacement support for gpg-agent:
+    # $ echo "enable-ssh-support" >> ~/.gnupg/gpg-agent.conf
+    # Allow admin actions on your YubiKey (if your gnupg version is < 2.0.11):
+    # $ echo "allow-admin" >>  ~/.gnupg/scdaemon.conf
+
+    eval "$(gpg-agent --daemon --max-cache-ttl-ssh 10 --max-cache-ttl 10 --enable-ssh-support --sh)" >/dev/null
+
+    export GPG_AGENT_INFO=$GPG_AGENT_INFO
+    export SSH_AUTH_SOCK=$SSH_AUTH_SOCK
+    export SSH_AGENT_PID=$SSH_AGENT_PID
+}
